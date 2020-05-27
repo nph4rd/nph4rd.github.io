@@ -1,8 +1,11 @@
-ipfs daemon &
+ipfs daemon > ipfs.log &
+sleep 5
 currentDate=`date`
-echo "###############################" >> hashes.txt
-echo $currentDate >> hashes.txt
-ipfs add -r . >> hashes.txt
+sed -i '$d' ipfs.html
+echo "<hr>" >> ipfs.html
+echo $currentDate >> ipfs.html
+ipfs add -r . >> ipfs.html
+echo "</html>"
 git add -A
 git commit -a -m 'Update ipfs hashes'
 git push origin master

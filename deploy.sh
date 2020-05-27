@@ -1,3 +1,4 @@
+ipfs daemon
 currentDate=`date`
 echo "###############################" >> hashes.txt
 echo $currentDate >> hashes.txt

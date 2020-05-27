@@ -5,7 +5,7 @@ sed -i '$d' ipfs.html
 echo "<hr>" >> ipfs.html
 echo $currentDate >> ipfs.html
 ipfs add -r . >> ipfs.html
-echo "</html>"
+echo "</html>" >> ipfs.html
 git add -A
 git commit -a -m 'Update ipfs hashes'
 git push origin master

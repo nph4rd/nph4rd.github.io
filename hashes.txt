@@ -1,0 +1,9 @@
+###############################
+Wed 27 May 2020 02:23:24 PM CDT
+added QmQTXxzMyTWAnGBQYsqLFkpgBu98fBBEk89Ue1XDf8RpT5 arturomf94.github.io/CNAME
+added QmZjp3ueMN5Ed8MT5ENf9SWEtKDP8H4tNiG8ny4UhRqsrE arturomf94.github.io/deploy.sh
+added QmVvRttd6KYeHHgkUkAjhKZmLPv7pd9uhsHujYNrX6fuXr arturomf94.github.io/hashes.txt
+added QmSLihpyyV87tNX2mkRQPYqPnbBmkZjYP182QrBJi7GnK3 arturomf94.github.io/index.html
+added Qmcwtomzm2vGhtj5xtwYey1FjNEZTpSenaLBWxaWqHsgMR arturomf94.github.io/ipfs.html
+added QmTAjtSRQR6J2QFGKenKPZQzvwxfnS4SEgfnhLKcbmsC7j arturomf94.github.io/yo.jpg
+added QmXX4TWe21Z8kAKcGhQrAz3fQERJEbZHKpWibjv8LLQETe arturomf94.github.io

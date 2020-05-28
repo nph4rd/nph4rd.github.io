@@ -4,7 +4,7 @@ currentDate=`date`
 sed -i '$d' ipfs.html
 echo "<hr>" >> ipfs.html
 echo $currentDate >> ipfs.html
-ipfs add -r . >> ipfs.html
+ipfs add --ignore-rules-path=.ipfsignore -r . >> ipfs.html
 echo "</html>" >> ipfs.html
 git add -A
 git commit -a -m 'Update ipfs hashes'

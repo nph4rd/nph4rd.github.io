@@ -6,15 +6,15 @@ Golang version: go1.13.10
 Swarm listening on /ip4/127.0.0.1/tcp/4001
 Swarm listening on /ip4/172.17.0.1/tcp/4001
 Swarm listening on /ip4/192.168.1.71/tcp/4001
-Swarm listening on /ip6/2806:10a6:c:b2c5:6ef:1ffd:26b9:76b7/tcp/4001
+Swarm listening on /ip6/2806:10a6:c:81ba:7962:924d:31cf:aab0/tcp/4001
 Swarm listening on /ip6/::1/tcp/4001
 Swarm listening on /ip6/fd00::1be5:2c60:1390:f9b5/tcp/4001
 Swarm listening on /p2p-circuit
 Swarm announcing /ip4/127.0.0.1/tcp/4001
 Swarm announcing /ip4/172.17.0.1/tcp/4001
 Swarm announcing /ip4/192.168.1.71/tcp/4001
-Swarm announcing /ip4/201.111.163.50/tcp/4001
-Swarm announcing /ip6/2806:10a6:c:b2c5:6ef:1ffd:26b9:76b7/tcp/4001
+Swarm announcing /ip4/201.108.70.86/tcp/4001
+Swarm announcing /ip6/2806:10a6:c:81ba:7962:924d:31cf:aab0/tcp/4001
 Swarm announcing /ip6/::1/tcp/4001
 Swarm announcing /ip6/fd00::1be5:2c60:1390:f9b5/tcp/4001
 API server listening on /ip4/127.0.0.1/tcp/5001

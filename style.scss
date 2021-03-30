@@ -20,7 +20,7 @@ html {
 body {
 	background: #3c4042;
   font: 18px/1.4 $helvetica;
-  color: $darkGray;
+  color: $lightGray;
 }
 
 .container {
@@ -196,7 +196,7 @@ small {
 
 .site-name {
   margin: 0;
-  color: $darkGray;
+  color: $lightGray;
   cursor: pointer;
   font-family: $helveticaNeue;
   font-weight: 300;
@@ -229,7 +229,7 @@ nav {
 
   a {
     margin-left: 20px;
-    color: $darkGray;
+    color: $lightGray;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;

@@ -88,13 +88,17 @@ If we picture both the cylinder and the plane, we can start to imagine how their
 
 ![intersection](https://raw.githubusercontent.com/arturomf94/arturomf94.github.io/master/images/borromean_rings/intersection.png)
 
-However, it is important to see that if we find the solution to the equations that we've defined we would get something like the following:
+However, it is important to see that if we substitute $$y$$ in the equation for the cylinder with $$\alpha z$$ we would get something like the following:
 
 $$ \frac{x^2}{r^2} + \alpha^2\frac{z^2}{r^2} = 1 $$
 
-This is actually an elliptic cylinder! It would like like the following:
+This is actually an elliptic cylinder! It would look like the following:
 
 ![intersection_solution](https://raw.githubusercontent.com/arturomf94/arturomf94.github.io/master/images/borromean_rings/intersection_solution.png)
+
+But we should note that the elipse formed on the $$x-z$$ plane is nothing more than **the projection of the ellipse we're actually looking for unto the x-z plane**. In fact, in the special case of $$\alpha = 1$$, we would get a circle, which, as we will see shortly is actually the projection of the following ellipse unto the $$x-z$$ plane:
+
+$$ \frac{x^2}{r^2} + \frac{z^2}{2r^2} = 1 $$
 
 
 

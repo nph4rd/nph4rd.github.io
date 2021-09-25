@@ -28,7 +28,7 @@ usemathjax: true
 
 ### Borromean Rings
 
-According to their [Wikipedia entry](), the Borromean rings are _"the Borromean rings are three simple closed curves in three-dimensional space that are topologically linked and cannot be separated from each other, but that break apart into two unknotted and unlinked loops when any one of the three is cut or removed"_.
+According to their [Wikipedia entry](), the Borromean rings are _"three simple closed curves in three-dimensional space that are topologically linked and cannot be separated from each other, but that break apart into two unknotted and unlinked loops when any one of the three is cut or removed"_.
 
 Apart from their natural mathematical relevance, they are culturally important: they are _"named after the Italian House of Borromeo, who used the circular form of these rings as a coat of arms, but designs based on the Borromean rings have been used in many cultures, including by the Norsemen and in Japan. They have been used in Christian symbolism as a sign of the Trinity, and in modern commerce as the logo of Ballantine beer, giving them the alternative name Ballantine rings."_
 

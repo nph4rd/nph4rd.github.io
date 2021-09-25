@@ -23,6 +23,9 @@ categories: [Other]
 ```
 ---
 
+
+$$E=mc^2$$
+
 **Description**: Gaby ([@gabyjidom](https://www.instagram.com/gabyjidom/)) and I have started going to a silversmithing course with a family friend, Marco, who has been kind enough to show us the basic principles and techniques behind creating silver jewlery. We've now reached that point at which we're supposed to be planning and executing our own projects, and, for a while now, I've been wanting to build a ring with the form of a [Borromean ring](https://en.wikipedia.org/wiki/Borromean_rings). It turns out that doing this actually has a fair degree of mathematical sophistication, and, since I've not found any good on-line resources on how to do this, I'd like to document some of the reasoning behind it.
 
 

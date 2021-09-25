@@ -111,32 +111,62 @@ $$ z = y\tan(\alpha) $$
 
 This is already our wanted ellipse, it just doesn't look like it still. What we need to do is rotate the whole space around the $$x$$ axis with an angle of $$-\alpha$$. The [rotation](https://en.wikipedia.org/wiki/Rotation_matrix#Basic_rotations) would look as follows:
 
+
 $$
-\begin{align}
+\begin{aligned}
+    \begin{bmatrix}
+        x \\
+        y \\
+        z
+    \end{bmatrix}
+    & \mapsto
+    \begin{bmatrix}
+      1 & 0 & 0 \\
+      0 & \cos(-\alpha) & -\sin(-\alpha) \\
+      0 & \sin(-\alpha) & \cos(-\alpha)
+    \end{bmatrix}
+    \begin{bmatrix}
+        x \\
+        y \\
+        z
+    \end{bmatrix} \\
+    & =
+    \begin{bmatrix}
+      x \\
+      y\cos(\alpha) + z\sin(\alpha) \\
+      -y\sin(\alpha) + z\cos(\alpha)
+    \end{bmatrix}
+\end{aligned}
+$$
+
+So, applying this rotation to our parametrised curve, we get the following:
+
+$$
+\begin{aligned}
 \begin{bmatrix}
-    \cos\theta \\
-    \sin\theta \\
-    \sin\theta\tan\alpha
+    r\cos(\theta) \\
+    r\sin(\theta) \\
+    \sin(\theta)\tan(\alpha)
 \end{bmatrix}
 & \mapsto
 \begin{bmatrix}
-  \cos\theta \\
-  \sin\theta\cos\alpha + \sin\theta\tan\alpha\sin\alpha \\
-  -\sin\theta\sin\alpha + \sin\theta\tan\alpha\cos\alpha
+  r\cos(\theta) \\
+  r\sin(\theta)\cos(\alpha) + r\sin(\theta)\tan(\alpha)\sin(\alpha) \\
+  -r\sin(\theta)\sin(\alpha) + r\sin(\theta)\tan(\alpha)\cos(\alpha)
 \end{bmatrix} \\
-& = 
+& =
 \begin{bmatrix}
-  \cos\theta \\
-  \sin\theta\cos\alpha + \sin\theta\sin^2\alpha/\cos\alpha \\
-  -\sin\theta\sin\alpha + \sin\theta\sin\alpha
+  r\cos(\theta) \\
+  r\sin(\theta)\cos(\alpha) + r\sin(\theta)\frac{\sin^2\alpha}{\cos(\alpha)} \\
+  -r\sin(\theta)\sin(\alpha) + r\sin(\theta)\sin(\alpha)
 \end{bmatrix} \\
-& = 
+& =
 \begin{bmatrix}
-  \cos\theta \\
-  \sin\theta/\cos\alpha \\
+  r\cos(\theta) \\
+  r\frac{\sin(\theta)}{\cos(\alpha)} \\
   0
-\end{bmatrix}.
-\end{align}
+\end{bmatrix}
+\end{aligned}
 $$
 
 

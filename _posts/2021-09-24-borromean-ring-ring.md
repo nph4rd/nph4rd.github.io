@@ -1,10 +1,10 @@
 ---
-usemathjax: true
 layout: post
 title: "Borromean Rings Ring"
 author: Arturo Márquez Flores
 tags: [Other, Silversmith]
 categories: [Other]
+usemathjax: true
 ---
 
 ---

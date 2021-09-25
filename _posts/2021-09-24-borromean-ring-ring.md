@@ -1,10 +1,10 @@
 ---
+usemathjax: true
 layout: post
 title: "Borromean Rings Ring"
 author: Arturo Márquez Flores
 tags: [Other, Silversmith]
 categories: [Other]
-usemathjax: true
 ---
 
 ---
@@ -63,7 +63,9 @@ This means that, in order to fit a "Borromean rings ring" to a given ring size [
 
 To understand how we're going to calculate the ellipses, imagine that we have a finger represented by a cylinder, given by the following equation:
 
-$$\frac{x^2}{r^2} + \frac{y^2}{r^2} = 1$$
+$$E=mc^2$$
+
+$$ \frac{x^2}{r^2} + \frac{y^2}{r^2} = 1 $$
 
 
 ---

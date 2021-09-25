@@ -50,7 +50,7 @@ A  ──────────┐
 
 ### Borromean Rings Ring
 
-To be able to construct a ring (as in jewlery 💍) out of some Borromean rings, it is important not only to break transitivity, but also to note that the following conditions cannot be satisfied simultaneously:A
+To be able to construct a ring (as in jewlery 💍) out of some Borromean rings, it is important not only to break transitivity, but also to note that the following conditions cannot be satisfied simultaneously:
 
 a) The rings are of the same size.
 

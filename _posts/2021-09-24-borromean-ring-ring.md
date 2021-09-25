@@ -77,9 +77,9 @@ That is, each ring is positioned at an angle within the range of $[\frac{\pi}{8}
 
 To translate this into maths, what we need to imagine is a hyperplane given by something like the following:
 
-$$ \alphaz = y $$
+$$ \alpha z = y $$
 
-Which can be seen graphically (with $\alpha = 2$) here:
+Where $$\alpha $$ hich can be seen graphically (with $\alpha = 2$) here:
 
 ![plane](https://raw.githubusercontent.com/arturomf94/arturomf94.github.io/master/images/borromean_rings/plane.png)
 

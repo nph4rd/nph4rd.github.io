@@ -111,10 +111,11 @@ $$ z = y\tan(\alpha) $$
 
 This is already our wanted ellipse, it just doesn't look like it still. What we need to do is rotate the whole space around the $$x$$ axis with an angle of $$-\alpha$$. The [rotation](https://en.wikipedia.org/wiki/Rotation_matrix#Basic_rotations) would look as follows:
 
+$$
 \begin{align}
 \begin{bmatrix}
-    \cos\theta \\\
-    \sin\theta \\\
+    \cos\theta \\
+    \sin\theta \\
     \sin\theta\tan\alpha
 \end{bmatrix}
 & \mapsto
@@ -136,6 +137,7 @@ This is already our wanted ellipse, it just doesn't look like it still. What we 
   0
 \end{bmatrix}.
 \end{align}
+$$
 
 
 

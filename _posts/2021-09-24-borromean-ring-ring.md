@@ -34,7 +34,7 @@ Apart from their natural mathematical relevance, they are culturally important: 
 
 They are also relevant to other fields of study: for instance, _"physical instances of the Borromean rings have been made from linked DNA or other molecules, and they have analogues in the Efimov state and Borromean nuclei, both of which have three components bound to each other although no two of them are bound"_.
 
-To understand how it is possible that the Borromean rings are unknotted when one of the rings is removed[^1], I like to think of them as a violation to a sort of transitivity; that is, if we have rings A, B and C. We can "make" them "Borromean" if we think of A being "within" B and B "within" C, **but** C "within" A. Clearly, here we're violating the transitivity of whatever "within" means. This can be perhaps be shown more clearly in the following photo of the first prototype I could build of them:
+To understand how it is possible that the Borromean rings are unknotted when one of the rings is removed [^1], I like to think of them as a violation to a sort of transitivity; that is, if we have rings A, B and C. We can "make" them "Borromean" if we think of A being "within" B and B "within" C, **but** C "within" A. Clearly, here we're violating the transitivity of whatever "within" means. This can be perhaps be shown more clearly in the following photo of the first prototype I could build of them:
 
 [](https://raw.githubusercontent.com/arturomf94/arturomf94.github.io/master/images/borromean_rings/photo1.jpeg)
 
@@ -55,9 +55,9 @@ To be able to construct a ring (as in jewlery 💍) out of some Borromean rings,
 a) The rings are of the same size.
 b) The rings are perfectly circular.
 
-The reason they cannot be satisfied simultaneously is because if the rings are perfectly circular *and* of the same size they would not fit "within" each other[^2]. In other words, circular Borromean rings are actually an example of an [impossible object](https://en.wikipedia.org/wiki/Impossible_object). Therefore, if we want the rings to be of the same size (which we do), we'll have to shape them as ellipses, with an arbitrarily small [eccentricity](https://en.wikipedia.org/wiki/Eccentricity_(mathematics)).
+The reason they cannot be satisfied simultaneously is because if the rings are perfectly circular *and* of the same size they would not fit "within" each other [^2]. In other words, circular Borromean rings are actually an example of an [impossible object](https://en.wikipedia.org/wiki/Impossible_object). Therefore, if we want the rings to be of the same size (which we do), we'll have to shape them as ellipses, with an arbitrarily small [eccentricity](https://en.wikipedia.org/wiki/Eccentricity_(mathematics)).
 
-This means that, in order to fit a "Borromean rings ring" to a given ring size[^3], we'll have to calculate the circumference of the ellipses that will compose it, which will be, of course, strictly greater than the usual circumference for that given ring size.
+This means that, in order to fit a "Borromean rings ring" to a given ring size [^3], we'll have to calculate the circumference of the ellipses that will compose it, which will be, of course, strictly greater than the usual circumference for that given ring size.
 
 ### Calculating the ellipses
 

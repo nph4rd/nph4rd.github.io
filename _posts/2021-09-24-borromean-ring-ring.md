@@ -157,7 +157,7 @@ $$
 & =
 \begin{bmatrix}
   r\cos(\theta) \\
-  r\sin(\theta)\cos(\alpha) + r\sin(\theta)\frac{\sin^2\alpha}{\cos(\alpha)} \\
+  r\sin(\theta)\cos(\alpha) + r\sin(\theta)\frac{\sin^2(\alpha)}{\cos(\alpha)} \\
   -r\sin(\theta)\sin(\alpha) + r\sin(\theta)\sin(\alpha)
 \end{bmatrix} \\
 & =

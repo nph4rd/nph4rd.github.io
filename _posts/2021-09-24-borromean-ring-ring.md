@@ -80,7 +80,7 @@ To translate this into maths, what we need to imagine is a hyperplane given by s
 
 $$ \alpha z = y $$
 
-Which can be seen graphically (with $$\alpha = 2$$) here:
+Where $$\alpha \neq 0$$. This can be seen graphically (with $$\alpha = 2$$) here:
 
 ![plane](https://raw.githubusercontent.com/arturomf94/arturomf94.github.io/master/images/borromean_rings/plane.png)
 
@@ -91,6 +91,12 @@ If we picture both the cylinder and the plane, we can start to imagine how their
 However, it is important to see that if we find the solution to the equations that we've defined we would get something like the following:
 
 $$ \frac{x^2}{r^2} + \alpha^2\frac{z^2}{r^2} = 1 $$
+
+This is actually an elliptic cylinder! It would like like the following:
+
+![intersection_solution](https://raw.githubusercontent.com/arturomf94/arturomf94.github.io/master/images/borromean_rings/intersection_solution.png)
+
+
 
 ---
 

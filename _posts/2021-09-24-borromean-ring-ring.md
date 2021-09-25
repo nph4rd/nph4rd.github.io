@@ -36,7 +36,7 @@ They are also relevant to other fields of study: for instance, _"physical instan
 
 To understand how it is possible that the Borromean rings are unknotted when one of the rings is removed [^1], I like to think of them as a violation to a sort of transitivity; that is, if we have rings A, B and C. We can "make" them "Borromean" if we think of A being "within" B and B "within" C, **but** C "within" A. Clearly, here we're violating the transitivity of whatever "within" means. This can be perhaps be shown more clearly in the following photo of the first prototype I could build of them:
 
-[](https://raw.githubusercontent.com/arturomf94/arturomf94.github.io/master/images/borromean_rings/photo1.jpeg)
+[photo1](https://raw.githubusercontent.com/arturomf94/arturomf94.github.io/master/images/borromean_rings/photo1.jpeg)
 
 One can notice that such relation with much more clarity:
 

@@ -105,6 +105,34 @@ To solve our problem it would be easier to parametrise both our cylinder and our
 
 $$ x = r\cos(\theta) $$
 
+$$ y = r\sin(\theta) $$
+
+$$ z = y\tan(\alpha) $$
+
+This is already our wanted ellipse, it just doesn't look like it still. What we need to do is rotate the whole space around the $$x$$ axis with an angle of $$-\alpha$$. The [rotation](https://en.wikipedia.org/wiki/Rotation_matrix#Basic_rotations) would look as follows:
+
+\begin{aligned}
+\begin{bmatrix} \cos\theta \\ \sin\theta \\ \sin\theta\tan\alpha \end{bmatrix}
+& \mapsto
+\begin{bmatrix}
+  \cos\theta \\
+  \sin\theta\cos\alpha + \sin\theta\tan\alpha\sin\alpha \\
+  -\sin\theta\sin\alpha + \sin\theta\tan\alpha\cos\alpha
+\end{bmatrix} \\
+& = 
+\begin{bmatrix}
+  \cos\theta \\
+  \sin\theta\cos\alpha + \sin\theta\sin^2\alpha/\cos\alpha \\
+  -\sin\theta\sin\alpha + \sin\theta\sin\alpha
+\end{bmatrix} \\
+& = 
+\begin{bmatrix}
+  \cos\theta \\
+  \sin\theta/\cos\alpha \\
+  0
+\end{bmatrix}.
+\end{aligned}
+
 
 
 ---

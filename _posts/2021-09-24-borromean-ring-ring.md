@@ -53,6 +53,7 @@ A  ──────────┐
 To be able to construct a ring (as in jewlery 💍) out of some Borromean rings, it is important not only to break transitivity, but also to note that the following conditions cannot be satisfied simultaneously:A
 
 a) The rings are of the same size.
+
 b) The rings are perfectly circular.
 
 The reason they cannot be satisfied simultaneously is because if the rings are perfectly circular *and* of the same size they would not fit "within" each other [^2]. In other words, circular Borromean rings are actually an example of an [impossible object](https://en.wikipedia.org/wiki/Impossible_object). Therefore, if we want the rings to be of the same size (which we do), we'll have to shape them as ellipses, with an arbitrarily small [eccentricity](https://en.wikipedia.org/wiki/Eccentricity_(mathematics)).

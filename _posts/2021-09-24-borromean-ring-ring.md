@@ -185,7 +185,7 @@ This is the ellipse we were looking for! 🎉 Only now it's been rotated into th
 
 $$ \frac{x^2}{r^2} + \cos^2(\alpha)\frac{y^2}{r^2} = 1 $$
 
-This means the [semi-major and semi-minor axes](https://en.wikipedia.org/wiki/Semi-major_and_semi-minor_axes), $$a$$ and $$b$$ would be given by, $$r$$ and $$\frac{r}{\cos(\alpha)}$$, respectively.
+This means the [semi-major and semi-minor axes](https://en.wikipedia.org/wiki/Semi-major_and_semi-minor_axes), $$a$$ and $$b$$, would be given by, $$r$$ and $$\frac{r}{\cos(\alpha)}$$, respectively.
 
 If we assume (as it was mentioned earlier) that $$\alpha = \frac{\pi}{8}$$, then we can calculate, for a given ring size, the circumference that the corresponding ellipse would have.
 

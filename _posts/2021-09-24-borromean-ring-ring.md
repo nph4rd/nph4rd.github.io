@@ -78,9 +78,9 @@ That is, each ring is positioned at an angle within the range of $$[\frac{\pi}{8
 
 To translate this into maths, what we need to imagine is a hyperplane given by something like the following:
 
-$$ \alpha z = y $$
+$$ cz = y $$
 
-Where $$\alpha \neq 0$$. This can be seen graphically (with $$\alpha = 2$$) here:
+Where $$c \neq 0$$. This can be seen graphically (with $$c = 2$$) here:
 
 ![plane](https://raw.githubusercontent.com/arturomf94/arturomf94.github.io/master/images/borromean_rings/plane.png)
 
@@ -88,15 +88,15 @@ If we picture both the cylinder and the plane, we can start to imagine how their
 
 ![intersection](https://raw.githubusercontent.com/arturomf94/arturomf94.github.io/master/images/borromean_rings/intersection.png)
 
-However, it is important to see that if we substitute $$y$$ in the equation for the cylinder with $$\alpha z$$ we would get something like the following:
+However, it is important to see that if we substitute $$y$$ in the equation for the cylinder with $$cz$$ we would get something like the following:
 
-$$ \frac{x^2}{r^2} + \alpha^2\frac{z^2}{r^2} = 1 $$
+$$ \frac{x^2}{r^2} + c^2\frac{z^2}{r^2} = 1 $$
 
 This is actually an elliptic cylinder! It would look like the following:
 
 ![intersection_solution](https://raw.githubusercontent.com/arturomf94/arturomf94.github.io/master/images/borromean_rings/intersection_solution.png)
 
-But we should note that the elipse formed on the $$x-z$$ plane is nothing more than **the projection of the ellipse we're actually looking for onto the x-z plane**. In fact, in the special case of $$\alpha = 1$$, we would get a circle, which, as we will see shortly, is actually the projection of the following ellipse onto the $$x-z$$ plane:
+But we should note that the elipse formed on the $$x-z$$ plane is nothing more than **the projection of the ellipse we're actually looking for onto the x-z plane**. In fact, in the special case of $$c = 1$$, we would get a circle, which, as we will see shortly, is actually the projection of the following ellipse onto the $$x-z$$ plane:
 
 $$ \frac{x^2}{r^2} + \frac{z^2}{2r^2} = 1 $$
 
@@ -108,6 +108,8 @@ $$ x = r\cos(\theta) $$
 $$ y = r\sin(\theta) $$
 
 $$ z = y\tan(\alpha) $$
+
+Where $$\alpha$$ is the angle between the hyperplane $$cz = y$$ and the $$x-z$$ plane, so, for instance, if $$c = 2$$ (as in our example) $$\alpha = \frac{\pi}{8}$$.
 
 This is already our wanted ellipse, it just doesn't look like it still. What we need to do is rotate the whole space around the $$x$$ axis with an angle of $$-\alpha$$. The [rotation](https://en.wikipedia.org/wiki/Rotation_matrix#Basic_rotations) would look as follows:
 
@@ -169,6 +171,28 @@ $$
 \end{aligned}
 $$
 
+Therefore, what we end up having is the ellipse given by:
+
+
+$$ x = r\cos(\theta) $$
+
+$$ y = r\frac{\sin(\theta)}{\cos(\alpha)} $$
+
+$$ z = 0 $$
+
+This is the ellipse we were looking for! 🎉 Only now it's been rotated into the $$x-y$$ axis, so we can now use the standard equation for an ellipse:
+
+
+$$ \frac{x^2}{r^2} + \cos^2(\alpha)\frac{y^2}{r^2} = 1 $$
+
+This means the [semi-major and semi-minor axes](https://en.wikipedia.org/wiki/Semi-major_and_semi-minor_axes), $$a$$ and $$b$$ would be given by, $$r$$ and $$\frac{r}{\cos(\alpha)}$$, respectively.
+
+If we assume (as it was mentioned earlier) that $$\alpha = \frac{\pi}{8}$$, then we can calculate, for a given ring size, the circumference that the corresponding ellipse would have.
+
+For a specific example, take the ring size of 9 (US). Its diameter is 18.95mm, so $$r = 9.475$$. Therefore $$r = 9.475$$ and $$b = \frac{9.475}{cos(\frac{\pi}{8})} \approx 10.364mm$$. Using an ellipse-circumference calculator (like [this one](https://miniwebtool.com/ellipse-circumference-calculator/)), we get that the required circumference for the ellipse is 62.389mm.
+
+
+🍀
 
 
 ---

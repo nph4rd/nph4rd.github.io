@@ -66,6 +66,6 @@ To understand how we're going to calculate the ellipses, imagine that we have a 
 $$\frac{x^2}{r^2} + \frac{y^2}{r^2} = 1$$
 
 
-[^1] Knots that satisfy this property are commonly known as [Brunnian rings](https://en.wikipedia.org/wiki/Brunnian_link).
-[^2] See [this](https://en.wikipedia.org/wiki/Borromean_rings#Ring_shape) for a more detailed explanation of why this is so.
-[^3] I've found [this](https://www.bikerringshop.com/pages/ring-size-chart) conversion table to be particularly useful for this task.
+[^1]: Knots that satisfy this property are commonly known as [Brunnian rings](https://en.wikipedia.org/wiki/Brunnian_link).
+[^2]: See [this](https://en.wikipedia.org/wiki/Borromean_rings#Ring_shape) for a more detailed explanation of why this is so.
+[^3]: I've found [this](https://www.bikerringshop.com/pages/ring-size-chart) conversion table to be particularly useful for this task.

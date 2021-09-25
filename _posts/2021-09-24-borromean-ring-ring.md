@@ -34,7 +34,7 @@ Apart from their natural mathematical relevance, they are culturally important: 
 
 They are also relevant to other fields of study: for instance, _"physical instances of the Borromean rings have been made from linked DNA or other molecules, and they have analogues in the Efimov state and Borromean nuclei, both of which have three components bound to each other although no two of them are bound"_.
 
-To understand how it is possible that the Borromean rings are unknotted when one of the rings is removed [^1], I like to think of them as a violation to a sort of transitivity; that is, if we have rings A, B and C. We can "make" them "Borromean" if we think of A being "within" B and B "within" C, **but** C "within" A. Clearly, here we're violating the transitivity of whatever "within" means. This can be perhaps be shown more clearly in the following photo of the first prototype I could build of them:
+To understand how it is possible that the Borromean rings are unknotted when one of the rings is removed [^1], I like to think of them as a violation to a sort of transitivity; that is, if we have rings A, B and C. We can "make" them "Borromean" if we think of A being "within" B and B "within" C, **but** C "within" A. Clearly, here we're violating the transitivity of whatever "within" means. This can perhaps be better understood by looking at the following photo of the first prototype I could build of them:
 
 ![photo1](https://raw.githubusercontent.com/arturomf94/arturomf94.github.io/master/images/borromean_rings/photo1.jpeg)
 

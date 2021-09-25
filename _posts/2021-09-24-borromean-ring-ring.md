@@ -66,7 +66,7 @@ To understand how we're going to calculate the ellipses, imagine that we have a 
 
 $$ \frac{x^2}{r^2} + \frac{y^2}{r^2} = 1 $$
 
-Such cylinder looks a bit lik this:
+Such cylinder looks a bit like this:
 
 ![cylinder](https://raw.githubusercontent.com/arturomf94/arturomf94.github.io/master/images/borromean_rings/cylinder.png)
 
@@ -96,9 +96,14 @@ This is actually an elliptic cylinder! It would look like the following:
 
 ![intersection_solution](https://raw.githubusercontent.com/arturomf94/arturomf94.github.io/master/images/borromean_rings/intersection_solution.png)
 
-But we should note that the elipse formed on the $$x-z$$ plane is nothing more than **the projection of the ellipse we're actually looking for unto the x-z plane**. In fact, in the special case of $$\alpha = 1$$, we would get a circle, which, as we will see shortly is actually the projection of the following ellipse unto the $$x-z$$ plane:
+But we should note that the elipse formed on the $$x-z$$ plane is nothing more than **the projection of the ellipse we're actually looking for onto the x-z plane**. In fact, in the special case of $$\alpha = 1$$, we would get a circle, which, as we will see shortly, is actually the projection of the following ellipse onto the $$x-z$$ plane:
 
 $$ \frac{x^2}{r^2} + \frac{z^2}{2r^2} = 1 $$
+
+
+To solve our problem it would be easier to parametrise both our cylinder and our plane as follows [^4]:
+
+$$ x = r\cos(\theta) $$
 
 
 
@@ -107,3 +112,4 @@ $$ \frac{x^2}{r^2} + \frac{z^2}{2r^2} = 1 $$
 [^1]: Knots that satisfy this property are commonly known as [Brunnian rings](https://en.wikipedia.org/wiki/Brunnian_link).
 [^2]: See [this](https://en.wikipedia.org/wiki/Borromean_rings#Ring_shape) for a more detailed explanation of why this is so.
 [^3]: I've found [this](https://www.bikerringshop.com/pages/ring-size-chart) conversion table to be particularly useful for this task.
+[^4]: This Math Stack Exchange [entry](https://math.stackexchange.com/questions/2618675/prove-that-the-intersection-of-a-cylinder-and-a-plane-forms-an-ellipse) was extremely useful in order to get the solution.

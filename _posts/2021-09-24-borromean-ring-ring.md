@@ -73,13 +73,13 @@ Note that, given the shape of the Borromean rings, the way way the finger goes t
 
 ![photo2](https://raw.githubusercontent.com/arturomf94/arturomf94.github.io/master/images/borromean_rings/photo2.jpeg)
 
-That is, each ring is positioned at an angle within the range of $[\frac{\pi}{8}, \frac{\pi}{4}]$ ([22.5°, 45°]) _quoad_ the axis that is perpendicular to the finger.
+That is, each ring is positioned at an angle within the range of $$[\frac{\pi}{8}, \frac{\pi}{4}]$$ ([22.5°, 45°]) _quoad_ the axis that is perpendicular to the finger.
 
 To translate this into maths, what we need to imagine is a hyperplane given by something like the following:
 
 $$ \alpha z = y $$
 
-Where $$\alpha $$ hich can be seen graphically (with $\alpha = 2$) here:
+Which can be seen graphically (with $$\alpha = 2$$) here:
 
 ![plane](https://raw.githubusercontent.com/arturomf94/arturomf94.github.io/master/images/borromean_rings/plane.png)
 
@@ -89,7 +89,7 @@ If we picture both the cylinder and the plane, we can start to imagine how their
 
 However, it is important to see that if we find the solution to the equations that we've defined we would get something like the following:
 
-$$ \frac{x^2}{r^2} + 4\frac{z^2}{r^2} = 1 $$
+$$ \frac{x^2}{r^2} + \alpha^2\frac{z^2}{r^2} = 1 $$
 
 ---
 

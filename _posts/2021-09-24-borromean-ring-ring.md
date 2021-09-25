@@ -113,9 +113,9 @@ This is already our wanted ellipse, it just doesn't look like it still. What we 
 
 \begin{align}
 \begin{bmatrix}
-    \cos\theta \\
-    \sin\theta \\
-    \sin\theta\tan\alpha 
+    \cos\theta \\\
+    \sin\theta \\\
+    \sin\theta\tan\alpha
 \end{bmatrix}
 & \mapsto
 \begin{bmatrix}

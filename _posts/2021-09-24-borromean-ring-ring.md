@@ -109,7 +109,7 @@ $$ y = r\sin(\theta) $$
 
 $$ z = y\tan(\alpha) $$
 
-Where $$\alpha$$ is the angle between the hyperplane $$cz = y$$ and the $$x-z$$ plane, so, for instance, if $$c = 2$$ (as in our example) $$\alpha = \frac{\pi}{8}$$.
+Where $$\alpha$$ is the angle formed between the hyperplane $$cz = y$$ and the $$x-y$$ plane, so, for instance, if $$c = 3$$ (as in our example) $$\alpha = \frac{\pi}{8}$$.
 
 This is already our wanted ellipse, it just doesn't look like it still. What we need to do is rotate the whole space around the $$x$$ axis with an angle of $$-\alpha$$. The [rotation](https://en.wikipedia.org/wiki/Rotation_matrix#Basic_rotations) would look as follows:
 

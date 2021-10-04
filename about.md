@@ -6,7 +6,7 @@ permalink: /about/
 
 I'm part of the SMPC team at [OpenMined](https://www.openmined.org/). I also work at [Bitso](https://bitso.com/) as a Machine Learning Engineer.
 
-I'm mostly and calm, privacy-enhancing technologies.
+I'm mostly interested in calm, privacy-enhancing technologies.
 
 ### Contact me:
 

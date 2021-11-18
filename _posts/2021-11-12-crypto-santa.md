@@ -26,7 +26,7 @@ During Christmas 2019, I implemented [this](https://github.com/arturomf94/secret
 
 ![primarquez](https://raw.githubusercontent.com/arturomf94/arturomf94.github.io/master/images/primarquez.jpeg)
 
-Although that program worked very well back then, I realised that the permutation me and my cousins used was **secret to them, but not to me** since I had run the program myself, as a trusted third party (TTP) and I wondered whether there was a protocol that would allow us to do this **without any TTPs!**. Apart from from it being an interesting problem in this context, I also thought it could be thought of as a more general coordination problem that might have applications in other fields 🤔.
+Although that program worked very well back then, I realised that the permutation me and my cousins used was **secret to them, but not to me** since I had run the program myself, as a trusted third party (TTP) and I wondered whether there was a protocol that would allow us to do this **without any TTPs!**. Apart from from it being an interesting problem in this context, I also thought it could be thought of as a more general coordination problem that might have applications in other fields 🤔 [^2].
 
 I stopped thinking about that problem soon after, but recently I saw this tweet that grabbed my attention:
 
@@ -50,11 +50,11 @@ Before going into details about the  protocol (at least in my own words) I shoul
 
 #### The actual work
 
-Although I did not make a very thorough search for previous work (after all, I'm only doing this for fun), I did find three very interesting articles/papers about _crypto santa_ [^2]:
+Although I did not make a very thorough search for previous work (after all, I'm only doing this for fun), I did find three very interesting articles/papers about _crypto santa_ [^3]:
 
 The first one was an [open-access](https://orbilu.uni.lu/handle/10993/25936) paper from 2010 by _Sjouke Mauw, Sasa Radomirovic, and Peter Ryan_, in which the authors offer a _decentralized_ solution using the elGamal cryptosystem (which will be outlined in the next section). The protocol they describe is similar to the one outlined by Yehuda Lindell in the tweet above, except for the fact that they include a _derangement test_ to assure that the resulting permutation is a derangement (i.e. has no fixed-points), and a _commitment step_ so as to make the protocol verifiable (i.e. to detect cheaters! 🕵️).
 
-The second paper I found was a subsequent work by _Peter Ryan_, that can be found as a [chapter](https://link.springer.com/chapter/10.1007%2F978-3-662-49301-4_33) to a [book](https://link.springer.com/book/10.1007/978-3-662-49301-4) that is unfortunately behind a paywall [^3]. The protocol described here is very elegant and is actually the main basis of my implementation.
+The second paper I found was a subsequent work by _Peter Ryan_, that can be found as a [chapter](https://link.springer.com/chapter/10.1007%2F978-3-662-49301-4_33) to a [book](https://link.springer.com/book/10.1007/978-3-662-49301-4) that is unfortunately behind a paywall [^4]. The protocol described here is very elegant and is actually the main basis of my implementation.
 
 
 #### elGamal
@@ -66,5 +66,6 @@ The second paper I found was a subsequent work by _Peter Ryan_, that can be foun
 ---
 
 [^1]: I'd like to point out that this implementation is not entirely my own. I actually recycled a bunch of code I found somewhere, but I can't remember exactly where now. Credits to the commons, though, I guess 🤷.
-[^2]: Mainly thanks to [this](https://crypto.stackexchange.com/a/36854) StackExchange answer.
-[^3]: It would be a shame if anyone undermined this effort to keep this knowledge behind a paywall by searching for the [book's URL](https://link.springer.com/book/10.1007/978-3-662-49301-4) in one of those terrible and evil [open-science](https://en.wikipedia.org/wiki/Open_science) platforms such as [Sci-Hub](https://en.wikipedia.org/wiki/Sci-Hub). **DO NOT DO THIS**.
+[^2]: Because [trusted third parties are security loopholes](https://nakamotoinstitute.org/trusted-third-parties/).
+[^3]: Mainly thanks to [this](https://crypto.stackexchange.com/a/36854) StackExchange answer.
+[^4]: It would be a shame if anyone undermined this effort to keep this knowledge behind a paywall by searching for the [book's URL](https://link.springer.com/book/10.1007/978-3-662-49301-4) in one of those terrible and evil [open-science](https://en.wikipedia.org/wiki/Open_science) platforms such as [Sci-Hub](https://en.wikipedia.org/wiki/Sci-Hub). **DO NOT DO THIS**.

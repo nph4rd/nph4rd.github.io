@@ -42,7 +42,7 @@ There were a bunch of replies by [@LindellYehuda](https://twitter.com/LindellYeh
 
 It seemed to me that this problem could be solved with a fairly simple protocol and I made the decision to implement it for this (2021) Christmas, at least as POC program that simulates the parties and their interactions, while omitting everything else around the protocol, such as the secure communication channels, the clients, etc. In what follows I will describe the protocol in a little more detail, provide some more information about the actual work behind this (that is, the previous research work by other people who actually designed some protocols to solve this) and share some details about my implementation and how to use it.
 
-### The protocol
+### Background
 
 Secret Santa is actually a very popular tradition in the West, as pointed out in its [Wikipedia entry](https://en.wikipedia.org/wiki/Secret_Santa). Traditionally (at least in my family) people would get together and write the names of the participants on pieces of paper, that would then be placed in some sort of container (bag, hat, or whatever). The container would then be passed around among the participants, and each would draw one piece of paper. If the paper they drew has their own name on it then, of course, he/she would show it to the rest of the participants, place the paper back into the recipient and draw another one. This step is repeated until that person has a paper that does not have their own name on it, and, thus, a random mapping is created, which is not known to any of the participants. This is beatiful, of course, and it's the trivial solution to what we seek, but we want to be able to replicate something like this for the case where the participants can't meet in person! The following is a description of **one solution** to this problem, but it is possible to do this in a number of different ways.
 
@@ -75,6 +75,49 @@ Now, decryption is as follows: the owner of the private key, $$ x $$ correspondi
 3. Compute $$ m = c_{2} \cdot r^{-1}$$.
 4. Map $$m$$ back to the plaintext $$M$$.
 
+---
+
+_Note:_
+
+_A useful property of the ElGamal cryptosystem is that it allows for re-encryptions. To illustrate this, let's follow-up on the explanation above. If someone generates another value $$ s' $$ then they can compute a new ciphertext given by: $$ (c_1^{s'}, c_2^{s'})$$. Note that the owner of the private key can still recover the plaintext message._
+
+---
+
+### The protocol
+
+Now that we know how ElGamal works and we know a little bit more about the previous work on the development of the protocol, we can outline the protocol that will be used in the implementation.
+
+Suppose a set of $$ N $$ players want to organize a decentralized secret 🎅 and that they've agreed on using a group $$ G $$ with the wanted characteristics above. That is, assume they've chosen a large prime $$ q $$ and they've constructed the multiplicative group of integers modulo $$ q $$. They can all generate a key pair: $$ (x_i, pk_i) $$, with $$ pk_i = (G, q, g, h_i) = (G, q, g, g^{x_i})$$ and broadcast their public key so as to form the vector:
+
+$$ \langle g^{x_1}, g^{x_2}, ..., g^{x_N} \rangle $$
+
+The first player can now encrypt [^7] and shuffle the vector with her own encryption value, $$ s_1 $$. Thus, the vector becomes:
+
+$$ \langle g^{x_{\pi_1(1)}s_1}, g^{x_{\pi_1(2)}s_1}, ..., g^{x_{\pi_1(N)}s_1} \rangle $$
+
+This first player can now forward (through a secure channel) the new vector, along with the shared value $$ g^{s_1} $$, to a second player. The process is repeated for the arbitrary player $$ i $$. This player also applies an encryption and a random shuffle to the vector she receives with a random value $$ s_i $$. The vector becomes: 
+
+$$ \langle g^{x_{\hat{\pi}_i(1)}\hat{s}_i}, g^{x_{\hat{\pi}_i(2)}\hat{s}_i}, ..., g^{x_{\hat{\pi}_i(N)}\hat{s}_i} \rangle $$
+
+Where:
+
+$$ \hat{s}_i = \prod_{j=1}^{i} s_j$$
+
+And the permutation $$ \hat{\pi}_i: \{1, ..., N\} \rightarrow \{1, ..., N\} $$ is the composition of the permutations of all the players that have participated so far. That is:
+
+$$ \hat{\pi}_i = \pi_{i} \circ \pi_{i-1} \circ ... \pi_{1} $$
+
+Again, player $$ i $$ shares the new vector and the shared value, $$ g^{\hat{s}_i} $$, with the next player. Finally, we reach player $$ N $$, who repeats the process and broadcasts the final vector to the rest of the players, along with the shared value. With it, each player only needs to raise the shared value, $$ g^{\hat{s}_N}$$, to its private key value, $$ x_i $$, and find its match in the vector. For example, if player $$1$$ does this and finds a match in position $$3$$, then player $$1$$ has to give out a present to player $$3$$ and **only player $$ 1 $$ knows this!**
+
+---
+
+_Note:_
+
+_This construction is in some ways similar to a [mix network](https://en.wikipedia.org/wiki/Mix_network), which is used in protocols, such as TOR._
+
+_Privacy is a human right! [Go donate!](https://donate.torproject.org/)_
+
+---
 
 
 ### The implementation
@@ -89,3 +132,4 @@ Now, decryption is as follows: the owner of the private key, $$ x $$ correspondi
 [^4]: It would be a shame if anyone undermined this effort to keep this knowledge behind a paywall by searching for the [book's URL](https://link.springer.com/book/10.1007/978-3-662-49301-4) in one of those terrible and evil [open-science](https://en.wikipedia.org/wiki/Open_science) platforms such as [Sci-Hub](https://en.wikipedia.org/wiki/Sci-Hub). **DO NOT DO THIS**.
 [^5]: Note that if $$ n $$ is a prime then it satisfies the condition that $$ n $$ is either $$ 1, 2, 4, p^k $$ or $$ 2p^k $$. Furthermore, we can [know](https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n#Structure) that the [_order_](https://en.wikipedia.org/wiki/Order_(group_theory)) of the group is given by $$ n -1 $$.
 [^6]: This can be done in a number of ways. For example, one can use the [extended Euclidean algorithm](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm) or use [Lagrange's theorem](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm) to compute $$ c^{q-x}_{1} $$ as the inverse.
+[^7]: Note that this is essentialy equivalent to encrypting the identity of the group.

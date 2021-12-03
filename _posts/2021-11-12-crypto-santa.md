@@ -70,7 +70,7 @@ Under this scheme, encryption consists on the following: a party uses the public
 
 Now, decryption is as follows: the owner of the private key, $$ x $$ corresponding to public key $$ (G, q, g, h) $$ can recover $$ m $$ with the following steps:
 
-1. Compute $$ c_{1}^{x} $$, which is $$ g^xs = h^s = r $$, thus recovering the shared secret. 
+1. Compute $$ c_{1}^{x} $$, which is $$ g^{xs} = h^s = r $$, thus recovering the shared secret. 
 2. Compute the inverse of the shared secret, $$ r^{-1} $$ [^6].
 3. Compute $$ m = c_{2} \cdot r^{-1}$$.
 4. Map $$m$$ back to the plaintext $$M$$.
@@ -113,9 +113,8 @@ Again, player $$ i $$ shares the new vector and the shared value, $$ g^{\hat{s}_
 
 _Note:_
 
-_This construction is in some ways similar to a [mix network](https://en.wikipedia.org/wiki/Mix_network), which is used in protocols, such as TOR._
+_This construction is in some ways similar to a [mix network](https://en.wikipedia.org/wiki/Mix_network), which is used in protocols, such as TOR [^8]._
 
-_Privacy is a human right! [Go donate!](https://donate.torproject.org/)_
 
 ---
 
@@ -133,3 +132,4 @@ _Privacy is a human right! [Go donate!](https://donate.torproject.org/)_
 [^5]: Note that if $$ n $$ is a prime then it satisfies the condition that $$ n $$ is either $$ 1, 2, 4, p^k $$ or $$ 2p^k $$. Furthermore, we can [know](https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n#Structure) that the [_order_](https://en.wikipedia.org/wiki/Order_(group_theory)) of the group is given by $$ n -1 $$.
 [^6]: This can be done in a number of ways. For example, one can use the [extended Euclidean algorithm](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm) or use [Lagrange's theorem](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm) to compute $$ c^{q-x}_{1} $$ as the inverse.
 [^7]: Note that this is essentialy equivalent to encrypting the identity of the group.
+[^8]: Privacy is a human right! [Go donate!](https://donate.torproject.org/).

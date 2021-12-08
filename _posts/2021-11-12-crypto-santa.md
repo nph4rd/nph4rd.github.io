@@ -79,7 +79,7 @@ Now, decryption is as follows: the owner of the private key, $$ x $$ correspondi
 
 _Note:_
 
-_A useful property of the ElGamal cryptosystem is that it allows for re-encryptions. In particular, we will use a seemingly pointless property, that is, however, very important to the protocol implementation, which is that if $$ m = e $$ (that is, $$ m $$ is the group identity) then whoever generates another value $$ s' $$ can compute a new ciphertext given by: $$ (c_1^{s'}, c_2^{s'})$$. For a normal application this is useless because it only works for a pretty specific case that would imply knowing the message in the first place! However, as we will see soon, this is key in our protocol._
+_A useful property of the ElGamal cryptosystem is that it allows for re-encryptions. In particular, we will use a seemingly pointless property that is, however, very important to the protocol implementation, which is that if $$ m = e $$ (that is, $$ m $$ is the group identity) then whoever generates another value $$ s' $$ can compute a new ciphertext given by: $$ (c_1^{s'}, c_2^{s'})$$. For a normal application this is useless because it only works for a pretty specific case that would imply knowing the message in the first place! However, as we will see soon, this is key in our protocol._
 
 ---
 

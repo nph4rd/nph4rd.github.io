@@ -52,7 +52,7 @@ Before going into details about the  protocol (at least in my own words) I shoul
 
 Although I did not make a very thorough search for previous work (after all, I'm only doing this for fun), I did find three very interesting articles/papers about _crypto santa_ [^3]:
 
-The first one was an [open-access](https://orbilu.uni.lu/handle/10993/25936) paper from 2010 by _Sjouke Mauw, Sasa Radomirovic, and Peter Ryan_, in which the authors offer a _decentralized_ solution using the ElGamal cryptosystem (which will be outlined in the next section). The protocol they describe is similar to the one outlined by Yehuda Lindell in the tweet above, except for the fact that they include a _derangement test_ to assure that the resulting permutation is a derangement (i.e. has no fixed-points), and a _commitment step_ so as to make the protocol verifiable (i.e. to detect cheaters! 🕵️). Presumbly, the idea to have a **shared** ElGamal key-pair is so that it can be used as a [threshold cryptosystem](https://en.wikipedia.org/wiki/Threshold_cryptosystem). Although this is really cool, I think it is unnecessary, as we will see in the following work.
+The first one was an [open-access](https://orbilu.uni.lu/handle/10993/25936) paper from 2010 by _Sjouke Mauw, Sasa Radomirovic, and Peter Ryan_, in which the authors offer a _decentralised_ solution using the ElGamal cryptosystem (which will be outlined in the next section). The protocol they describe is similar to the one outlined by Yehuda Lindell in the tweet above, except for the fact that they include a _derangement test_ to assure that the resulting permutation is a derangement (i.e. has no fixed-points), and a _commitment step_ so as to make the protocol verifiable (i.e. to detect cheaters! 🕵️). Presumbly, the idea to have a **shared** ElGamal key-pair is so that it can be used as a [threshold cryptosystem](https://en.wikipedia.org/wiki/Threshold_cryptosystem). Although this is really cool, I think it is unnecessary, as we will see in the following work.
 
 The second paper I found was a subsequent work by _Peter Ryan_, that can be found as a [chapter](https://link.springer.com/chapter/10.1007%2F978-3-662-49301-4_33) to a [book](https://link.springer.com/book/10.1007/978-3-662-49301-4) from 2016 that is unfortunately behind a paywall [^4]. The protocol described here is very elegant and is actually the main basis of my implementation. I will describe it in a little more detail below. For now it suffices to say that one of the main differences is that in this protocol each party has their own key-pair, instead of having a shared key-pair with which all encryptions are done, as in the one outlined in the tweet or in the previous 2010 paper.
 
@@ -87,15 +87,15 @@ _A useful property of the ElGamal cryptosystem is that it allows for re-encrypti
 
 Now that we know how ElGamal works and we know a little bit more about the previous work on the development of the protocol, we can outline the protocol that will be used in the implementation.
 
-Suppose a set of $$ N $$ players want to organize a decentralized secret 🎅 and that they've agreed on using a group $$ G $$ with the wanted characteristics above. That is, assume they've chosen a large prime $$ q $$ and they've constructed the multiplicative group of integers modulo $$ q $$. They can all generate a key pair: $$ (x_i, pk_i) $$, with $$ pk_i = (G, q, g, h_i) = (G, q, g, g^{x_i})$$ and broadcast their public key so as to form the vector:
+Suppose a set of $$ N $$ players want to organize a decentralised secret 🎅 and that they've agreed on using a group $$ G $$ with the wanted characteristics above. That is, assume they've chosen a large prime $$ q $$ and they've constructed the multiplicative group of integers modulo $$ q $$. They can all generate a key pair: $$ (x_i, pk_i) $$, with $$ pk_i = (G, q, g, h_i) = (G, q, g, g^{x_i})$$ and broadcast their public key [^7] so as to form the vector:
 
 $$ \langle g^{x_1}, g^{x_2}, ..., g^{x_N} \rangle $$
 
-The first player can now encrypt [^7] and shuffle the vector with her own encryption value, $$ s_1 $$. Thus, the vector becomes:
+The first player can now re-encrypt/re-randomise and shuffle the vector with her own encryption value, $$ s_1 $$. Thus, the vector becomes:
 
 $$ \langle g^{x_{\pi_1(1)}s_1}, g^{x_{\pi_1(2)}s_1}, ..., g^{x_{\pi_1(N)}s_1} \rangle $$
 
-This first player can now forward (through a secure channel) the new vector, along with the shared value $$ g^{s_1} $$, to a second player. The process is repeated for the arbitrary player $$ i $$. This player also applies an encryption and a random shuffle to the vector she receives with a random value $$ s_i $$. The vector becomes: 
+This first player can now forward (through a secure channel) the new vector, along with the shared value $$ g^{s_1} $$, to a second player. The process is repeated for the arbitrary player $$ i $$. This player also applies a re-encryption and a random shuffle to the vector she receives with a random value $$ s_i $$. The vector becomes: 
 
 $$ \langle g^{x_{\hat{\pi}_i(1)}\hat{s}_i}, g^{x_{\hat{\pi}_i(2)}\hat{s}_i}, ..., g^{x_{\hat{\pi}_i(N)}\hat{s}_i} \rangle $$
 
@@ -107,19 +107,192 @@ And the permutation $$ \hat{\pi}_i: \{1, ..., N\} \rightarrow \{1, ..., N\} $$ i
 
 $$ \hat{\pi}_i = \pi_{i} \circ \pi_{i-1} \circ ... \pi_{1} $$
 
-Again, player $$ i $$ shares the new vector and the shared value, $$ g^{\hat{s}_i} $$, with the next player. Finally, we reach player $$ N $$, who repeats the process and broadcasts the final vector to the rest of the players, along with the shared value. With it, each player only needs to raise the shared value, $$ g^{\hat{s}_N}$$, to its private key value, $$ x_i $$, and find its match in the vector. For example, if player $$1$$ does this and finds a match in position $$3$$, then player $$1$$ has to give out a present to player $$3$$ and **only player $$ 1 $$ knows this!**
+Again, player $$ i $$ shares the new vector and the shared value, $$ g^{\hat{s}_i} $$, with the next player. Finally, we reach player $$ N $$, who repeats the process and broadcasts the final vector to the rest of the players, along with the shared value. With it, each player only needs to raise the shared value, $$ g^{\hat{s}_N}$$, to its private key value, $$ x_i $$, and find its match in the vector. For example, if player $$1$$ does this and finds a match in position $$3$$, then player $$1$$ has to give out a present to player $$3$$ and **only player $$ 1 $$ knows this!** [^8]
 
 ---
 
 _Note:_
 
-_This construction is in some ways similar to a [mix network](https://en.wikipedia.org/wiki/Mix_network), which is used in protocols, such as TOR [^8]._
+_This construction is in some ways similar to a [mix network](https://en.wikipedia.org/wiki/Mix_network), which is used in protocols, such as TOR [^9]._
 
 
 ---
 
 
 ### The implementation
+
+The Rust implementation of this protocol can be found in [this repo](https://github.com/arturomf94/crypto-santa). Notice that it is only a simple demo of the protocol! That is, it does not include many of the (very important) details that the protocol would need to work properly. Most importantly, it is not an implementation of the clients/peers that would participate in the protocol. Instead, it's just a script that runs the protocol in one centralised program.
+
+Another important note about the implementation is that it uses [this](https://github.com/ZenGo-X/rust-elgamal) implementation of ElGamal in Rust. The only extra function that we use is the `rerandomise` function, which is as follows:
+
+```rust
+/// Function that rerandomises a ciphertext. Note that this only works
+/// when the message `m` is the identity.
+fn rerandomise(c: &ElGamalCiphertext, y: &BigInt) -> Result<ElGamalCiphertext, ElGamalError> {
+    let c1 = BigInt::mod_pow(&c.c1, &y, &c.pp.p);
+    let c2 = BigInt::mod_pow(&c.c2, &y, &c.pp.p);
+    Ok(ElGamalCiphertext {
+        c1,
+        c2,
+        pp: c.pp.clone(),
+    })
+}
+```
+
+The program has two main structs:
+
+```rust
+// This represents a single player.
+#[derive(Debug)]
+struct Player {
+    /// The id of the player.
+    id: u8,
+    /// Who this player gives a present to.
+    gives_to: Option<u8>,
+    /// Key-pair in the ElGamal cryptosystem.
+    key_pair: Option<ElGamalKeyPair>,
+}
+```
+
+```rust
+/// This struct represents an instance of
+/// a secret santa that will be played out.
+#[derive(Debug)]
+struct SecretSanta {
+    /// The vector of players that
+    /// will participate.
+    players: Vec<Player>,
+}
+```
+
+The `SecretSanta` struct has a function `assign`:
+
+```rust
+/// Function that "triggers" the protocol
+/// creating the random permutation of players
+/// in a "decentralised" way.
+pub fn assign(&mut self) {
+```
+
+This function takes care of running the protocol on a `SecretSanta` instance. I will show this, step-by-step.
+
+The first step is to generate the ElGamal instance:
+
+```rust
+// Build new ElGamal instance
+let group_id = SupportedGroups::FFDHE2048;
+let pp = ElGamalPP::generate_from_rfc7919(group_id);
+```
+
+In order for the players to be able to announce whenever they have been self-assigned in the secret santa, we use a flag:
+
+```rust
+// Use this as a flag whenever a player
+// finds that she has been self-assigned.
+let mut finished = false;
+```
+
+So... the rest of the code for this function runs within a `while` loop that finishes once a [derangement](https://en.wikipedia.org/wiki/Derangement) has been found:
+
+```rust
+while !finished {
+    ...
+}
+```
+
+Within the loop we have 3 main steps. First:
+
+```rust
+// We instantiate the vector of ElGamal
+// ciphertexts.
+let mut vec: Vec<ElGamalCiphertext> = Vec::new();
+// This first step consists of each player
+// adding an encryption of the identity,
+// with "randomness" 1. That is, each player
+// adds its public-key `g^x`.
+for p in &mut self.players {
+    p.key_pair = Some(ElGamalKeyPair::generate(&pp));
+    let m = BigInt::from(1);
+    let y = BigInt::from(1);
+    let c = ElGamal::encrypt_from_predefined_randomness(
+        &m,
+        &p.key_pair.as_ref().unwrap().pk,
+        &y,
+    )
+    .unwrap();
+    vec.push(c)
+}
+```
+
+Then:
+
+```rust
+// Each player randomly permutes the vector
+// and reandomises each entry.
+for _ in &self.players {
+    let slice: &mut [ElGamalCiphertext] = &mut vec;
+    let mut rng = thread_rng();
+    slice.shuffle(&mut rng);
+    vec = slice.to_vec();
+    let y = BigInt::sample_below(&pp.q);
+    vec = vec.iter().map(|x| rerandomise(&x, &y).unwrap()).collect();
+}
+```
+
+And, finally:
+
+```rust
+// The vector is broadcasted to every player and
+// now each can find out who they give a present
+// to, but only that.
+for p in &mut self.players {
+    // Each player can get the shared value, `g^\hat{s}`
+    // from any of the ciphertexts (c1).
+    let shared_value = &vec.get(0).unwrap().c1;
+    // Each player now finds their assignment by
+    // raising the shared value to her secret key `x`.
+    let target_value =
+        BigInt::mod_pow(&shared_value, &p.key_pair.as_ref().unwrap().sk.x, &pp.p);
+    p.gives_to = Some(vec.iter().position(|x| x.c2 == target_value).unwrap() as u8 + 1);
+    // If the player finds out that she has
+    // been self assigned, then she "announces"
+    // this and the assignment starts over again.
+    if p.id == p.gives_to.unwrap() {
+        finished = false;
+        break; // No point in continuing.
+    }
+}
+```
+
+With all this, we can run something like the following, for a 10-person secret santa:
+
+```rust
+// Instantiate a new SecretSanta with 10 players.
+let mut ss = SecretSanta::new(10);
+// Run the protocol.
+ss.assign();
+// Find out the assignment:
+for p in &ss.players {
+    println!("{:?} gives 🎁 to: {:?}", p.id, p.gives_to.unwrap());
+}
+```
+
+The above results in something like this:
+
+```
+New secret 🎅 among 10 players!
+1 gives 🎁 to: 2
+2 gives 🎁 to: 4
+3 gives 🎁 to: 9
+4 gives 🎁 to: 1
+5 gives 🎁 to: 8
+6 gives 🎁 to: 5
+7 gives 🎁 to: 3
+8 gives 🎁 to: 6
+9 gives 🎁 to: 7
+```
+
+With this, we've managed to decentralise Christmas! 🎄
 
 🍀
 
@@ -131,5 +304,6 @@ _This construction is in some ways similar to a [mix network](https://en.wikiped
 [^4]: It would be a shame if anyone undermined this effort to keep this knowledge behind a paywall by searching for the [book's URL](https://link.springer.com/book/10.1007/978-3-662-49301-4) in one of those terrible and evil [open-science](https://en.wikipedia.org/wiki/Open_science) platforms such as [Sci-Hub](https://en.wikipedia.org/wiki/Sci-Hub). **DO NOT DO THIS**.
 [^5]: Note that if $$ n $$ is a prime then it satisfies the condition that $$ n $$ is either $$ 1, 2, 4, p^k $$ or $$ 2p^k $$. Furthermore, we can [know](https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n#Structure) that the [_order_](https://en.wikipedia.org/wiki/Order_(group_theory)) of the group is given by $$ n -1 $$.
 [^6]: This can be done in a number of ways. For example, one can use the [extended Euclidean algorithm](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm) or use [Lagrange's theorem](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm) to compute $$ c^{q-x}_{1} $$ as the inverse.
-[^7]: Note that this is essentialy equivalent to encrypting the identity of the group.
-[^8]: Privacy is a human right! [Go donate!](https://donate.torproject.org/).
+[^7]: Note that broadcasting this is equivalent to broadcasting an encryption of $$ m $$ when it is the group identity and the encryption randomness, $$ s $$ is equal to $$ 1 $$.
+[^8]: If a user finds out that she has been self-assigned, she can announce this and the protocol is repeated from the top. This is what would usually happen in a traditional secret-santa. Cryptographers like to find out ways of avoiding this by adding it to their protocols, of course, but that's a bit out of the scope of this post.
+[^9]: Privacy is a human right! [Go donate!](https://donate.torproject.org/).

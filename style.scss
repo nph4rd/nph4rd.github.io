@@ -1,6 +1,5 @@
 ---
 ---
-
 //
 // IMPORTS
 //
@@ -18,9 +17,9 @@ html {
 }
 
 body {
-  background: #2e3340;
+  background: #ECEFF4;
   font: 18px/1.4 $helvetica;
-  color: $lightGray;
+  color: #4C566A;
 }
 
 .container {
@@ -30,9 +29,14 @@ body {
   width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $helveticaNeue;
-  color: $lightGray;
+  color: #4C566A;
   font-weight: bold;
 
   line-height: 1.7;
@@ -46,6 +50,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 30px;
+
   a {
     color: inherit;
   }
@@ -71,13 +76,16 @@ p {
 a {
   color: #8f76a3;
   text-decoration: none;
-	cursor: pointer;
-  &:hover, &:active {
+  cursor: pointer;
+
+  &:hover,
+  &:active {
     color: #8f76a3;
   }
 }
 
-ul, ol {
+ul,
+ol {
   margin: 15px 0;
   padding-left: 30px;
 }
@@ -90,19 +98,25 @@ ol {
   list-style-type: decimal;
 }
 
-ol ul, ul ol, ul ul, ol ol {
+ol ul,
+ul ol,
+ul ul,
+ol ol {
   margin: 0;
 }
 
-ul ul, ol ul {
+ul ul,
+ol ul {
   list-style-type: circle;
 }
 
-em, i {
+em,
+i {
   font-style: italic;
 }
 
-strong, b {
+strong,
+b {
   font-weight: bold;
 }
 
@@ -127,23 +141,24 @@ small {
 // Specify the color of the selection
 ::-moz-selection {
   color: $black;
-  background: $lightGray;
+  background: #4C566A;
 }
+
 ::selection {
   color: $black;
-  background: $lightGray;
+  background: #4C566A;
 }
 
 // Nicolas Gallagher's micro clearfix hack
 // http://nicolasgallagher.com/micro-clearfix-hack/
 .clearfix:before,
 .clearfix:after {
-    content: " ";
-    display: table;
+  content: " ";
+  display: table;
 }
 
 .clearfix:after {
-    clear: both;
+  clear: both;
 }
 
 /*********************/
@@ -160,7 +175,7 @@ small {
 
 .masthead {
   padding: 20px 0;
-  border-bottom: 1px solid $lightGray;
+  border-bottom: 1px solid #4C566A;
 
   @include mobile {
     text-align: center;
@@ -196,7 +211,7 @@ small {
 
 .site-name {
   margin: 0;
-  color: $lightGray;
+  color: #4C566A;
   cursor: pointer;
   font-family: $helveticaNeue;
   font-weight: 300;
@@ -229,7 +244,7 @@ nav {
 
   a {
     margin-left: 20px;
-    color: $lightGray;
+    color: #4C566A;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
@@ -245,12 +260,12 @@ nav {
 // .main
 //
 
-.posts > .post {
+.posts>.post {
   padding-bottom: 2em;
-  border-bottom: 1px solid $lightGray;
+  border-bottom: 1px solid #4C566A;
 }
 
-.posts > .post:last-child {
+.posts>.post:last-child {
   padding-bottom: 1em;
   border-bottom: none;
 }
@@ -279,7 +294,7 @@ nav {
   margin-top: 50px;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  background-color: $lightGray;
+  background-color: #4C566A;
 }
 
 footer {
@@ -294,46 +309,69 @@ footer {
 
 // Footnote reference
 a.footref {
-    vertical-align: super;
-    font-size: smaller;
+  vertical-align: super;
+  font-size: smaller;
 }
+
 .footdef {
-    font-size: smaller;
+  font-size: smaller;
 }
 
 // Use this for centering images
 // {: .center}
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 // Shade `text`
 code.highlighter-rouge {
-    background-color: rgba(0,0,0,0.04);
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 // Table formatting
-.post table,tr,td,th {
-    border-collapse: collapse;
-    border-spacing: 0;
-    border: 1px solid #c0c0c0;
+.post table,
+tr,
+td,
+th {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #c0c0c0;
 }
+
 .post th {
-    padding: 6px 13px;
-    font-weight: bold;
+  padding: 6px 13px;
+  font-weight: bold;
 }
+
 .post table tr:nth-child(2n) {
-    background-color: #f8f8f8;
+  background-color: #f8f8f8;
 }
+
 .post td {
-    padding-bottom: 6px;
-    padding-left: 13px;
-    padding-right: 13px;
-    padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-top: 6px;
 }
 
 // Specific (code samples, radare-exported asm)
-code { font-family: monospace; white-space: pre; font-size: 80%; line-height: 1.0; color: #8b6aa6}
-pre { font-family: monospace; white-space: pre; font-size: 80%; line-height: 1.0; }
-pre.radareasm { background-color: #000000; color: #c0c0c0; overflow: scroll; }
+code {
+  font-family: monospace;
+  white-space: pre;
+  font-size: 80%;
+  line-height: 1.0;
+  color: #8b6aa6
+}
 
+pre {
+  font-family: monospace;
+  white-space: pre;
+  font-size: 80%;
+  line-height: 1.0;
+}
+
+pre.radareasm {
+  background-color: #000000;
+  color: #c0c0c0;
+  overflow: scroll;
+}

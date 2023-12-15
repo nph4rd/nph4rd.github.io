@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "BORROMEAN RINGS BLA BLA BLA"
+title: "BORROMEAN RINGS"
 author: Arturo Márquez Flores
 tags: [Other, Silversmith]
 categories: [Other]

@@ -1,13 +1,12 @@
 ---
 layout: post
-title: "Crypto Santa"
+title: "CRYPTO SANTA"
 author: Arturo Márquez Flores
 tags: [Cryptography]
 categories: [Cryptography]
 usemathjax: true
 ---
 
----
 ```
   .-""-.._
  /,.._____\
@@ -18,7 +17,6 @@ usemathjax: true
    {       }
     `-----'
 ```
----
 
 **Description**:
 

@@ -388,5 +388,16 @@ pre.radareasm {
 
 .entry {
     padding-top: 7px;
-    text-align: justify;
+    text-align: left;
+    
+    @media screen and (min-width: 641px) {
+        text-align: justify;
+    }
+}
+
+// Mobile breakpoints
+@mixin mobile {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
 }

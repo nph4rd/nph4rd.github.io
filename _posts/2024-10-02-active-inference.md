@@ -56,20 +56,20 @@ Keeping this in mind, the FEP borrows [^1] from the concept of a Markov blanket 
 
 These specific **agentic systems** minimize entropy -- by the very definition of what we're interested in -- and in doing so what they achieve is to stay within the bounds that allow their persistence in time, which we may call "self-evidencing". This is a concept common to many fields. For instance, from a physiological perspective this is essentially the idea of [*homeostasis*](https://en.wikipedia.org/wiki/Homeostasis) or from a more general perspective in cybernetics there's the concepts of [*autopoiesis*](https://en.wikipedia.org/wiki/Autopoiesis).
 
-To understand why there's this equivalence between entropy minimization and self-evidencing, we should note that Shannon entropy is, by [definition](https://en.wikipedia.org/wiki/Entropy_(information_theory)), the average *surprise*, which is the negative log-evidence. Suppose $$y$$ are the observed states by a given system. Following the notation from the book: 
+To understand why there's this equivalence between entropy minimization and self-evidencing, we should note that Shannon entropy is, by [definition](https://en.wikipedia.org/wiki/Entropy_(information_theory)), the average *surprise*, which is the negative log-evidence. Suppose $$ y $$ are the observed states by a given system. Following the notation from the book: 
 
 
 $$
 H[P(y)] = E_{P(y)}[S(y)] = -E_{P(y)}[\ln P(y)]
 $$
 
-That is, the entropy of the distribution over the states, $$P(y)$$, is equal to the expected value of the surprise under the distribution $$P(y)$$ , where the surprise, $$S(y)$$, is defined as $$-lnP(y)$$.  This means that it is equivalent to minimize entropy and to increase the "model evidence" (likelihood), $$P(y)$$, which can be thought of as achieving a higher probability on those *preferred states*. For example, think of this as trying to maximize the probability that your core body temperature is within the normal physiological range.
+That is, the entropy of the distribution over the states, $$ P(y) $$, is equal to the expected value of the surprise under the distribution $$ P(y) $$ , where the surprise, $$ S(y) $$, is defined as $$ -lnP(y) $$.  This means that it is equivalent to minimize entropy and to increase the "model evidence" (likelihood), $$ P(y) $$, which can be thought of as achieving a higher probability on those *preferred states*. For example, think of this as trying to maximize the probability that your core body temperature is within the normal physiological range.
 
 But exactly **how** might a system stay within its desired bounds? Well, we already mentioned it is via its Markov blanket partitioned into both observation and action. That is, a system **regulates** its environment to minimize surprise, and, thus, resist entropy. In order to do this, the system must first **model** its environment. In cybernetics, this is known as the ["good regulator theorem"](https://en.wikipedia.org/wiki/Good_regulator).
 
-This is arguably very intuitive! Imagine you have to keep things under control in any given context. How would you go about that if you don't even have an idea of what the context is or how it develops!? To expand on this, imagine that the state of the environment is a variable, $$x^*$$. Then, the joint distribution of this state and the observations, $$y$$, form a joint distribution, $$P(x^*, y)$$. This is basically the *generative process* of the environment; that is, how the environment generates data. Although the agent does not **know** the underlying dynamics of the environment, by the good regulator theorem, it must at least have a **model** of it. This model may be expressed as $$P(x, y)$$, where $$x$$ are not necessarily the true states of the environment, but at least hypotheses over those states. To **infer** $$x$$ from $$y$$ -- which is to compute $$P(x|y)$$ -- is precisely the task that an agent would be concerned with. It's easy to think of this in the context of a card game, like blackjack. In that case you **don't** **know** the underlying state ($$x$$) of the deck of cards (the environment) and you only **observe** ($$y$$) the cards that have been dealt. Yet, if you want to win (observe your desired states) you should probably have at least some idea or approximation (i.e. a hypothesis of the state of the cards, $$x$$) so that you can chose **what** to do (ie. hit, stand, double-down, etc.).
+This is arguably very intuitive! Imagine you have to keep things under control in any given context. How would you go about that if you don't even have an idea of what the context is or how it develops!? To expand on this, imagine that the state of the environment is a variable, $$ x^* $$. Then, the joint distribution of this state and the observations, $$ y $$, form a joint distribution, $$ P(x^*, y) $$. This is basically the *generative process* of the environment; that is, how the environment generates data. Although the agent does not **know** the underlying dynamics of the environment, by the good regulator theorem, it must at least have a **model** of it. This model may be expressed as $$P(x, y)$$, where $$x$$ are not necessarily the true states of the environment, but at least hypotheses over those states. To **infer** $$ x $$ from $$ y $$ -- which is to compute $$ P(x|y) $$ -- is precisely the task that an agent would be concerned with. It's easy to think of this in the context of a card game, like blackjack. In that case you **don't** **know** the underlying state ( $$ x $$ ) of the deck of cards (the environment) and you only **observe** ( $$ y $$ ) the cards that have been dealt. Yet, if you want to win (observe your desired states) you should probably have at least some idea or approximation (i.e. a hypothesis of the state of the cards, $$ x $$ ) so that you can chose **what** to do (ie. hit, stand, double-down, etc.).
 
-So now we have two things we are trying to keep in mind: first, the surprise over the observed states of the agent, and, second, the generative **model** of the environment. But there's a couple of problems here. For starters, $$x^*$$ (the true state of the environment), may not even be accessible to the agent, as we have mentioned. Furthermore, computing $$P(x|y)$$ might be intractable or even unfeasible. The most natural assumption would be that agents somehow **approximate** the posterior, so we use a proxy distribution, $$Q(x)$$, and a metric, such as the KL divergence, between such proxy distribution and the true model posterior $$P(x|y)$$:
+So now we have two things we are trying to keep in mind: first, the surprise over the observed states of the agent, and, second, the generative **model** of the environment. But there's a couple of problems here. For starters, $$ x^* $$ (the true state of the environment), may not even be accessible to the agent, as we have mentioned. Furthermore, computing $$ P(x|y) $$ might be intractable or even unfeasible. The most natural assumption would be that agents somehow **approximate** the posterior, so we use a proxy distribution, $$ Q(x) $$, and a metric, such as the KL divergence, between such proxy distribution and the true model posterior $$ P(x|y) $$:
 
 $$
 D_{KL}[Q(x)||P(x|y)] = E_{Q(x)}\Big[ln\frac{Q(x)}{P(x|y)}\Big]
@@ -87,7 +87,7 @@ $$
 E_{Q(x)}\Big[ln\frac{Q(x)}{P(x,y)}\Big]
 $$
 
-The above is defined as the free energy, and it implies that if the agent minimizes this, it doesn't have to calculate the posterior anymore, it only needs the joint distribution $$P(x,y)$$ (i.e. its generative model).
+The above is defined as the free energy, and it implies that if the agent minimizes this, it doesn't have to calculate the posterior anymore, it only needs the joint distribution $$ P(x,y) $$ (i.e. its generative model).
 
 This has two other equivalent formulations, which can help with intuition.
 
@@ -97,7 +97,7 @@ $$
 -E_{Q(x)}[lnP(x,y)] - H[Q(x)]
 $$
 
-The name *energy* makes reference to the homonymous term in the [Helmholtz free energy formulation](https://en.wikipedia.org/wiki/Helmholtz_free_energy), but it may be more intuitively interpreted as the consistency between the approximation $$Q(x)$$ and the generative model $$P(x,y)$$. On the other hand, the *entropy* term pushes the approximation to have more uncertainty. This can be interpreted as saying that whenever observations are scarce, using an approximation over the states of the environment that is maximally entropic would be optimal. In other words, when we know little of the environment, we can assign the same probabilities to all of its states!
+The name *energy* makes reference to the homonymous term in the [Helmholtz free energy formulation](https://en.wikipedia.org/wiki/Helmholtz_free_energy), but it may be more intuitively interpreted as the consistency between the approximation $$ Q(x) $$ and the generative model $$ P(x,y) $$. On the other hand, the *entropy* term pushes the approximation to have more uncertainty. This can be interpreted as saying that whenever observations are scarce, using an approximation over the states of the environment that is maximally entropic would be optimal. In other words, when we know little of the environment, we can assign the same probabilities to all of its states!
 
 The second formulation would be as follows:
 
@@ -105,7 +105,7 @@ $$
 D_{KL}[Q(x)||P(x)] - E_{Q(x)}[lnP(y|x)] 
 $$
 
-Here, the first term can be thought of as a *complexity* term, which measures how far is the approximate posterior from the priors over $$x$$. The second term is the *accuracy* of the approximation.  This formulation is akin to model selection (i.e. choosing models that are minimally complex but that also accurately account for data).
+Here, the first term can be thought of as a *complexity* term, which measures how far is the approximate posterior from the priors over $$ x $$. The second term is the *accuracy* of the approximation.  This formulation is akin to model selection (i.e. choosing models that are minimally complex but that also accurately account for data).
 
 With these re-formulations in mind, we can see that the FEP provides an elegant and concise way to theorize about systems that resist entropic forces, but, thus far, we haven't even incorporated action into the equations. Indeed, we mentioned that the agent wants to achieve both preferrable states, and a regulation of its environment via a model of it, but the FEP seems static, or at least, retrospective, in the sense that it focuses on present observations. How might it be extended into the future? This is where action comes in.
 
@@ -117,17 +117,17 @@ With these re-formulations in mind, we can see that the FEP provides an elegant 
 
 Active inference is the extension of the FEP to make sense of streams of observations/states into the future, and, as such, it has a prospective nature, shedding a light into planning and decision-making.
 
-Instead of a single state $$x$$ and a single observation $$y$$, let's now consider a stream $$\bar{x}$$ of states of the environment, and a stream of observations, $$\bar{y}$$. Of course, these streams should be thought of in the context of a stream of **actions** (i.e. a *policy*), $$\pi$$.
+Instead of a single state $$ x $$ and a single observation $$ y $$, let's now consider a stream $$ \bar{x} $$ of states of the environment, and a stream of observations, $$ \bar{y} $$. Of course, these streams should be thought of in the context of a stream of **actions** (i.e. a *policy*), $$ \pi $$.
 
-Using the FEP equations above, but with this prospective focus, and ommiting the conditional on the policy $$\pi$$, for simplicity, we would get the following expression:
+Using the FEP equations above, but with this prospective focus, and ommiting the conditional on the policy $$ \pi $$, for simplicity, we would get the following expression:
 
 $$
 -E_{Q(\bar{x}, \bar{y})}[lnP(\bar{x},\bar{y})] - H[Q(\bar{x})]
 $$
 
-where $$Q(\bar{x}, \bar{y}) := Q(\bar{x})P(\bar{y}|\bar{x})$$.
+where $$ Q(\bar{x}, \bar{y}) := Q(\bar{x})P(\bar{y}|\bar{x}) $$.
 
-So what has changed? To start with, we now have _actions_ in the model. The system's actions influence its environment, and the stream of current + future observations will influence present actions. This means that, whereas the free energy is dependent on the observations, here we have a dependency on the policy, $$\pi$$, which, in turn, conditions the probability of the future observations!
+So what has changed? To start with, we now have _actions_ in the model. The system's actions influence its environment, and the stream of current + future observations will influence present actions. This means that, whereas the free energy is dependent on the observations, here we have a dependency on the policy, $$ \pi $$ , which, in turn, conditions the probability of the future observations!
 
 The above may be re-written as:
 
@@ -149,7 +149,7 @@ $$
 -E_{Q(\bar{x}, \bar{y})}[D_{KL}[Q(\bar{x}|\bar{y})||Q(\bar{x})]] - E_{Q(\bar{y})}[lnP(\bar{y})]
 $$
 
-The above is the _expected free energy_. The first term can be interpreted as the information gain -- i.e. how much information about the states $$\bar{x}$$ is brought in by the stream of observations $$\bar{y}$$, which can be measured as the KL divergence between the distributions over $$\bar{x}$$, when conditioning on $$\bar{y}$$ vs when we don't :) This means that agents choose policies that _induce_ observations that carry more information with them. For example, imagine a situation where you need to go to the dentist. If you had a good recall of your schedule, having a look at your calendar will not give you any new information -- indeed, you might as well just call and book your appointment. However, normally, you would first take a look at your calendar to resolve the uncertainty around your schedule. Such step would allow you to gain enough information to then successfully achieve your goal to go to the dentist.
+The above is the _expected free energy_. The first term can be interpreted as the information gain -- i.e. how much information about the states $$ \bar{x} $$ is brought in by the stream of observations $$ \bar{y} $$, which can be measured as the KL divergence between the distributions over $$ \bar{x} $$, when conditioning on $$ \bar{y} $$ vs when we don't :) This means that agents choose policies that _induce_ observations that carry more information with them. For example, imagine a situation where you need to go to the dentist. If you had a good recall of your schedule, having a look at your calendar will not give you any new information -- indeed, you might as well just call and book your appointment. However, normally, you would first take a look at your calendar to resolve the uncertainty around your schedule. Such step would allow you to gain enough information to then successfully achieve your goal to go to the dentist.
 
 The second term of the expected free energy can be thought as utility maximisation, or the "exploitation" of policies that lead to preferrable observations. Thus, to minimise expected free energy it would be necessary not only to seek policies that induce "exploration" or information gain, but also to seek those that confirm priors over preferred states.
 

@@ -70,9 +70,11 @@ But exactly **how** might a system stay within its desired bounds? Well, we alre
 This is arguably very intuitive! Imagine you have to keep things under control in any given context. How would you go about that if you don't even have an idea of what the context is or how it develops!? To expand on this, imagine that the state of the environment is a variable, $x^*$. Then, the joint distribution of this state and the observations, $y$, form a joint distribution, $P(x^*, y)$. This is basically the *generative process* of the environment; that is, how the environment generates data. Although the agent does not **know** the underlying dynamics of the environment, by the good regulator theorem, it must at least have a **model** of it. This model may be expressed as $P(x, y)$, where $x$ are not necessarily the true states of the environment, but at least hypotheses over those states. To **infer** $x$ from $y$ -- which is to compute $P(x|y)$ -- is precisely the task that an agent would be concerned with. It's easy to think of this in the context of a card game, like blackjack. In that case you **don't** **know** the underlying state ($x$) of the deck of cards (the environment) and you only **observe** ($y$) the cards that have been dealt. Yet, if you want to win (observe your desired states) you should probably have at least some idea or approximation (i.e. a hypothesis of the state of the cards, $x$) so that you can chose **what** to do (ie. hit, stand, double-down, etc.).
 
 So now we have two things we are trying to keep in mind: first, the surprise over the observed states of the agent, and, second, the generative **model** of the environment. But there's a couple of problems here. For starters, $x^*$ (the true state of the environment), may not even be accessible to the agent, as we have mentioned. Furthermore, computing $P(x|y)$ might be intractable or even unfeasible. The most natural assumption would be that agents somehow **approximate** the posterior, so we use a proxy distribution, $Q(x)$, and a metric, such as the KL divergence, between such proxy distribution and the true model posterior $P(x|y)$:
+
 $$
 D_{KL}[Q(x)||P(x|y)] = E_{Q(x)}\Big[ln\frac{Q(x)}{P(x|y)}\Big]
 $$
+
 Thus, keeping in mind this approximation, what an agent would be doing, really, is to minimize the approximation error of to the posterior, and maximize the model log-evidence, which is the following: 
 
 $$
@@ -94,6 +96,7 @@ The first one would be to form the expression as the sum between an *energy* ter
 $$
 -E_{Q(x)}[lnP(x,y)] - H[Q(x)]
 $$
+
 The name *energy* makes reference to the homonymous term in the [Helmholtz free energy formulation](https://en.wikipedia.org/wiki/Helmholtz_free_energy), but it may be more intuitively interpreted as the consistency between the approximation $Q(x)$ and the generative model $P(x,y)$. On the other hand, the *entropy* term pushes the approximation to have more uncertainty. This can be interpreted as saying that whenever observations are scarce, using an approximation over the states of the environment that is maximally entropic would be optimal. In other words, when we know little of the environment, we can assign the same probabilities to all of its states!
 
 The second formulation would be as follows:
@@ -101,6 +104,7 @@ The second formulation would be as follows:
 $$
 D_{KL}[Q(x)||P(x)] - E_{Q(x)}[lnP(y|x)] 
 $$
+
 Here, the first term can be thought of as a *complexity* term, which measures how far is the approximate posterior from the priors over $x$. The second term is the *accuracy* of the approximation.  This formulation is akin to model selection (i.e. choosing models that are minimally complex but that also accurately account for data).
 
 With these re-formulations in mind, we can see that the FEP provides an elegant and concise way to theorize about systems that resist entropic forces, but, thus far, we haven't even incorporated action into the equations. Indeed, we mentioned that the agent wants to achieve both preferrable states, and a regulation of its environment via a model of it, but the FEP seems static, or at least, retrospective, in the sense that it focuses on present observations. How might it be extended into the future? This is where action comes in.

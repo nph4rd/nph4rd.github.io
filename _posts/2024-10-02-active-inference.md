@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "THOUGHTS ON ACTIVE INFERENCE"
+title: "ACTIVE INFERENCE"
 author: np
 tags: [AI]
 categories: [AI]

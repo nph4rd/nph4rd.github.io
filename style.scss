@@ -388,10 +388,27 @@ pre.radareasm {
 
 .entry {
     padding-top: 7px;
-    text-align: left;
+    
+    @include mobile {
+      text-align: left;
+      word-spacing: normal !important;
+      letter-spacing: normal !important;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+      -ms-hyphens: auto;
+    }
     
     @media screen and (min-width: 641px) {
         text-align: justify;
+    }
+    
+    p {
+      @include mobile {
+        text-align: left !important;
+        word-spacing: normal !important;
+        letter-spacing: normal !important;
+      }
     }
 }
 

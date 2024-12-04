@@ -11,11 +11,11 @@ usemathjax: true
 ```
        ⚡️ 🌀 ⚡️ 🌀 ⚡️
       ∰∭∬⫘⫘⫘∬∭∰
-  ⎛∿∿∿∿⎞|░▒▓█▓▒░|⎛∿∿∿∿⎞
-  ⌇|◣◢❂◣◢|⫯∑∑∑⫯|◣◢❂◣◢|⌇
+  ⎛∿∿∿∿⎞ \mid ░▒▓█▓▒░ \mid ⎛∿∿∿∿⎞
+  ⌇ \mid ◣◢❂◣◢ \mid ⫯∑∑∑⫯ \mid ◣◢❂◣◢ \mid ⌇
    ⎪⎨⎬⎨⎬⎨⎬⎪ ☯️ ⎪⎨⎬⎨⎬⎨⎬⎪
-  ⌇|◥◤∞◥◤|⫰∏∏∏⫰|◥◤∞◥◤|⌇
-  ⎝≈≈≈≈⎠|░▒▓█▓▒░|⎝≈≈≈≈⎠
+  ⌇ \mid ◥◤∞◥◤ \mid ⫰∏∏∏⫰ \mid ◥◤∞◥◤ \mid ⌇
+  ⎝≈≈≈≈⎠ \mid ░▒▓█▓▒░ \mid ⎝≈≈≈≈⎠
        ∯∮∳⫘⫘⫘∳∮∯
        ⚡️ 🌀 ⚡️ 🌀 ⚡️
 ```
@@ -65,15 +65,15 @@ That is, the entropy of the distribution over the states, $$ P(y) $$, is equal t
 
 But exactly **how** might a system stay within its desired bounds? Well, we already mentioned it is via its Markov blanket partitioned into both observation and action. That is, a system **regulates** its environment to minimize surprise, and, thus, resist entropy. In order to do this, the system must first **model** its environment. In cybernetics, this is known as the ["good regulator theorem"](https://en.wikipedia.org/wiki/Good_regulator).
 
-This is arguably very intuitive! Imagine you have to keep things under control in any given context. How would you go about that if you don't even have an idea of what the context is or how it develops!? To expand on this, imagine that the state of the environment is a variable, $$ x^* $$. Then, the joint distribution of this state and the observations, $$ y $$, form a joint distribution, $$ P(x^*, y) $$. This is basically the *generative process* of the environment; that is, how the environment generates data. Although the agent does not **know** the underlying dynamics of the environment, by the good regulator theorem, it must at least have a **model** of it. This model may be expressed as $$ P(x, y) $$, where $$ x $$ are not necessarily the true states of the environment, but at least hypotheses over those states. To **infer** $$ x $$ from $$ y $$ -- which is to compute $$ P(x|y) $$ -- is precisely the task that an agent would be concerned with. It's easy to think of this in the context of a card game, like blackjack. In that case you **don't know** the underlying state ( $$ x $$ ) of the deck of cards (the environment) and you only **observe** ( $$ y $$ ) the cards that have been dealt. Yet, if you want to win (observe your desired states) you should probably have at least some idea or approximation (i.e. a hypothesis of the state of the cards, $$ x $$ ) so that you can chose **what** to do (ie. hit, stand, double-down, etc.).
+This is arguably very intuitive! Imagine you have to keep things under control in any given context. How would you go about that if you don't even have an idea of what the context is or how it develops!? To expand on this, imagine that the state of the environment is a variable, $$ x^* $$. Then, the joint distribution of this state and the observations, $$ y $$, form a joint distribution, $$ P(x^*, y) $$. This is basically the *generative process* of the environment; that is, how the environment generates data. Although the agent does not **know** the underlying dynamics of the environment, by the good regulator theorem, it must at least have a **model** of it. This model may be expressed as $$ P(x, y) $$, where $$ x $$ are not necessarily the true states of the environment, but at least hypotheses over those states. To **infer** $$ x $$ from $$ y $$ -- which is to compute $$ P(x \mid y) $$ -- is precisely the task that an agent would be concerned with. It's easy to think of this in the context of a card game, like blackjack. In that case you **don't know** the underlying state ( $$ x $$ ) of the deck of cards (the environment) and you only **observe** ( $$ y $$ ) the cards that have been dealt. Yet, if you want to win (observe your desired states) you should probably have at least some idea or approximation (i.e. a hypothesis of the state of the cards, $$ x $$ ) so that you can chose **what** to do (ie. hit, stand, double-down, etc.).
 
-So now we have two things we are trying to keep in mind: first, the surprise over the observed states of the agent, and, second, the generative **model** of the environment. But there's a couple of problems here. For starters, $$ x^* $$ (the true state of the environment), may not even be accessible to the agent, as we have mentioned. Furthermore, computing $$ P(x|y) $$ might be intractable or even unfeasible. The most natural assumption would be that agents somehow **approximate** the posterior, so we use a proxy distribution, $$ Q(x) $$, and a metric, such as the KL divergence, between such proxy distribution and the true model posterior $$ P(x|y) $$ :
+So now we have two things we are trying to keep in mind: first, the surprise over the observed states of the agent, and, second, the generative **model** of the environment. But there's a couple of problems here. For starters, $$ x^* $$ (the true state of the environment), may not even be accessible to the agent, as we have mentioned. Furthermore, computing $$ P(x \mid y) $$ might be intractable or even unfeasible. The most natural assumption would be that agents somehow **approximate** the posterior, so we use a proxy distribution, $$ Q(x) $$, and a metric, such as the KL divergence, between such proxy distribution and the true model posterior $$ P(x \mid y) $$ :
 
-$$ D_{KL}[Q(x)||P(x|y)] = E_{Q(x)}\left[\ln\frac{Q(x)}{P(x|y)}\right] $$
+$$ D_{KL}[Q(x) \mid  \mid P(x \mid y)] = E_{Q(x)}\left[\ln\frac{Q(x)}{P(x \mid y)}\right] $$
 
 Thus, keeping in mind this approximation, what an agent would be doing, really, is to minimize the approximation error of to the posterior, and maximize the model log-evidence, which is the following: 
 
-$$ D_{KL}[Q(x)||P(x|y)] - \ln P(y) $$
+$$ D_{KL}[Q(x) \mid  \mid P(x \mid y)] - \ln P(y) $$
 
 The previous equation can be rearranged as follows:
 
@@ -91,7 +91,7 @@ The name *energy* makes reference to the homonymous term in the [Helmholtz free 
 
 The second formulation would be as follows:
 
-$$ D_{KL}[Q(x)||P(x)] - E_{Q(x)}[\ln P(y|x)] $$
+$$ D_{KL}[Q(x) \mid  \mid P(x)] - E_{Q(x)}[\ln P(y \mid x)] $$
 
 Here, the first term can be thought of as a *complexity* term, which measures how far is the approximate posterior from the priors over $$ x $$. The second term is the *accuracy* of the approximation.  This formulation is akin to model selection (i.e. choosing models that are minimally complex but that also accurately account for data).
 
@@ -113,24 +113,24 @@ $$ -E_{Q(\bar{x}, \bar{y})}[\ln P(\bar{x},\bar{y})] - H[Q(\bar{x})] $$
 
 where
 
-$$ Q(\bar{x}, \bar{y}) := Q(\bar{x})P(\bar{y}|\bar{x}) $$
+$$ Q(\bar{x}, \bar{y}) := Q(\bar{x})P(\bar{y} \mid \bar{x}) $$
 
 
 So what has changed? To start with, we now have _actions_ in the model. The system's actions influence its environment, and the stream of current + future observations will influence present actions. This means that, whereas the free energy is dependent on the observations, here we have a dependency on the policy, $$ \pi $$ , which, in turn, conditions the probability of the future observations!
 
 The above may be re-written as:
 
-$$ D_{KL}[Q(\bar{x})||P(\bar{x})] + E_{Q(\bar{x})}[H[P(\bar{y}|\bar{x})]] $$
+$$ D_{KL}[Q(\bar{x}) \mid  \mid P(\bar{x})] + E_{Q(\bar{x})}[H[P(\bar{y} \mid \bar{x})]] $$
 
 This is, of course, very similar to the second reformulation of the free energy in the previous section. The difference is that now the second term is an expectation over the entropy of the distribution of future observations, given the future states. This leads to a different interpretation of the expression. It now can be thought of as a value composed of a risk part in the first term, and an expected ambiguity in the second term. In other words, minimizing this value entails reducing the risk, which can be interpreted as the expected complexity cost of the approximation, and reducing the expected uncertainty, which is essentially the expected inaccuracy.
 
 Having said this, something we might consider is to switch the focus of the first term (the risk term) from states to observations. Why would this make sense? Well, mostly because sometimes the state-space is unknown, and it is more intuitive to think of preferences over outcomes/observations [^2]. With this in mind, we get the following inequality:
 
-$$ D_{KL}[Q(\bar{x})||P(\bar{x})] + E_{Q(\bar{x})}[H[P(\bar{y}|\bar{x})]] \geq D_{KL}[Q(\bar{y})||P(\bar{y})] + E_{Q(\bar{x})}[H[P(\bar{y}|\bar{x})]] $$
+$$ D_{KL}[Q(\bar{x}) \mid  \mid P(\bar{x})] + E_{Q(\bar{x})}[H[P(\bar{y} \mid \bar{x})]] \geq D_{KL}[Q(\bar{y}) \mid  \mid P(\bar{y})] + E_{Q(\bar{x})}[H[P(\bar{y} \mid \bar{x})]] $$
 
 The expression on the right-hand can have an analogous interpretation, and it can also be re-written as:
 
-$$ -E_{Q(\bar{x}, \bar{y})}[D_{KL}[Q(\bar{x}|\bar{y})||Q(\bar{x})]] - E_{Q(\bar{y})}[\ln P(\bar{y})] $$
+$$ -E_{Q(\bar{x}, \bar{y})}[D_{KL}[Q(\bar{x} \mid \bar{y}) \mid  \mid Q(\bar{x})]] - E_{Q(\bar{y})}[\ln P(\bar{y})] $$
 
 The above is the _expected free energy_. The first term can be interpreted as the information gain -- i.e. how much information about the states $$ \bar{x} $$ is brought in by the stream of observations $$ \bar{y} $$, which can be measured as the KL divergence between the distributions over $$ \bar{x} $$, when conditioning on $$ \bar{y} $$ vs when we don't :) This means that agents choose policies that _induce_ observations that carry more information with them. For example, imagine a situation where you need to go to the dentist. If you had a good recall of your schedule, having a look at your calendar will not give you any new information -- indeed, you might as well just call and book your appointment. However, normally, you would first take a look at your calendar to resolve the uncertainty around your schedule. Such step would allow you to gain enough information to then successfully achieve your goal to go to the dentist.
 

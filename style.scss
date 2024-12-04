@@ -418,3 +418,38 @@ pre.radareasm {
     @content;
   }
 }
+
+// Footnote reference in text (e.g., [^1])
+sup[id^="fnref"] {
+    font-size: 0.8em;
+    vertical-align: super;
+    line-height: 0;
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// Footnote list at bottom
+.footnotes {
+    margin-top: 2em;
+    font-size: 0.9em;
+    
+    ol {
+        margin-top: 0.5em;
+    }
+    
+    li {
+        margin-bottom: 0.5em;
+    }
+    
+    .reversefootnote {
+        text-decoration: none;
+        margin-left: 0.3em;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

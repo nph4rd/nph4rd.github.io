@@ -67,7 +67,7 @@ But exactly **how** might a system stay within its desired bounds? Well, we alre
 
 This is arguably very intuitive! Imagine you have to keep things under control in any given context. How would you go about that if you don't even have an idea of what the context is or how it develops!? To expand on this, imagine that the state of the environment is a variable, $$ x^* $$. Then, the joint distribution of this state and the observations, $$ y $$, form a joint distribution, $$ P(x^*, y) $$. This is basically the *generative process* of the environment; that is, how the environment generates data. Although the agent does not **know** the underlying dynamics of the environment, by the good regulator theorem, it must at least have a **model** of it. This model may be expressed as $$ P(x, y) $$, where $$ x $$ are not necessarily the true states of the environment, but at least hypotheses over those states. To **infer** $$ x $$ from $$ y $$ -- which is to compute $$ P(x \mid y) $$ -- is precisely the task that an agent would be concerned with. It's easy to think of this in the context of a card game, like blackjack. In that case you **don't know** the underlying state ($$ x $$) of the deck of cards (the environment) and you only **observe** ($$ y $$) the cards that have been dealt. Yet, if you want to win (observe your desired states) you should probably have at least some idea or approximation (i.e. a hypothesis of the state of the cards, $$ x $$) so that you can chose **what** to do (ie. hit, stand, double-down, etc.).
 
-So now we have two things we are trying to keep in mind: first, the surprise over the observed states of the agent, and, second, the generative **model** of the environment. But there's a couple of problems here. For starters, $$ x^* $$ (the true state of the environment), may not even be accessible to the agent, as we have mentioned. Furthermore, computing $$ P(x \mid y) $$ might be intractable or even unfeasible. The most natural assumption would be that agents somehow **approximate** the posterior, so we use a proxy distribution, $$ Q(x) $$, and a metric, such as the KL divergence, between such proxy distribution and the true model posterior $$ P(x \mid y) $$ :
+So now we have two things we are trying to keep in mind: first, the surprise over the observed states of the agent, and, second, the generative **model** of the environment. But there's a couple of problems here. For starters, $$ x^* $$ (the true state of the environment), may not even be accessible to the agent, as we have mentioned. Furthermore, computing $$ P(x \mid y) $$ might be intractable or even infeasible. The most natural assumption would be that agents somehow **approximate** the posterior, so we use a proxy distribution, $$ Q(x) $$, and a metric, such as the KL divergence, between such proxy distribution and the true model posterior $$ P(x \mid y) $$ :
 
 $$ D_{KL}[Q(x) \mid  \mid P(x \mid y)] = E_{Q(x)}\left[\ln\frac{Q(x)}{P(x \mid y)}\right] $$
 
@@ -95,7 +95,7 @@ $$ D_{KL}[Q(x) \mid  \mid P(x)] - E_{Q(x)}[\ln P(y \mid x)] $$
 
 Here, the first term can be thought of as a *complexity* term, which measures how far is the approximate posterior from the priors over $$ x $$. The second term is the *accuracy* of the approximation.  This formulation is akin to model selection (i.e. choosing models that are minimally complex but that also accurately account for data).
 
-With these re-formulations in mind, we can see that the FEP provides an elegant and concise way to theorize about systems that resist entropic forces, but, thus far, we haven't even incorporated action into the equations. Indeed, we mentioned that the agent wants to achieve both preferrable states, and a regulation of its environment via a model of it, but the FEP seems static, or at least, retrospective, in the sense that it focuses on present observations. How might it be extended into the future? This is where action comes in.
+With these re-formulations in mind, we can see that the FEP provides an elegant and concise way to theorize about systems that resist entropic forces, but, thus far, we haven't even incorporated action into the equations. Indeed, we mentioned that the agent wants to achieve both preferable states, and a regulation of its environment via a model of it, but the FEP seems static, or at least, retrospective, in the sense that it focuses on present observations. How might it be extended into the future? This is where action comes in.
 
 ## The step towards active inference
 
@@ -107,7 +107,7 @@ Active inference is the extension of the FEP to make sense of streams of observa
 
 Instead of a single state $$ x $$ and a single observation $$ y $$, let's now consider a stream $$ \bar{x} $$ of states of the environment, and a stream of observations, $$ \bar{y} $$. Of course, these streams should be thought of in the context of a stream of **actions** (i.e. a *policy*), $$ \pi $$.
 
-Using the FEP equations above, but with this prospective focus, and ommiting the conditional on the policy $$ \pi $$, for simplicity, we would get the following expression:
+Using the FEP equations above, but with this prospective focus, and omiting the conditional on the policy $$ \pi $$, for simplicity, we would get the following expression:
 
 $$ -E_{Q(\bar{x}, \bar{y})}[\ln P(\bar{x},\bar{y})] - H[Q(\bar{x})] $$
 
@@ -165,5 +165,5 @@ The FEP and the active inference framework seem to be, at least in my opinion, a
 
 [^1]: I say "borrows" because the more abstract definition of a Markov Blanket does not include the segregation of actions and observations. For example, in a Bayesian Network, the Markov Blanket of a node is defined as its parents, its children, and the parents of its children, but there is no bijection between this and actions/observations. This is also true for more general Probabilistic Graphical Models. 
 
-[^2]: I think this jump is not very well justified. A more rigurous formulation of the expected free energy and its relation to the free energy might be found [here](https://arxiv.org/abs/2004.08128).
+[^2]: I think this jump is not very well justified. A more rigorous formulation of the expected free energy and its relation to the free energy might be found [here](https://arxiv.org/abs/2004.08128).
 

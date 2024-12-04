@@ -127,7 +127,9 @@ $$
 
 where
 
-$$ Q(\bar{x}, \bar{y}) := Q(\bar{x})P(\bar{y}|\bar{x}) $$
+$$
+Q(\bar{x}, \bar{y}) := Q(\bar{x})P(\bar{y}|\bar{x})
+$$
 
 
 So what has changed? To start with, we now have _actions_ in the model. The system's actions influence its environment, and the stream of current + future observations will influence present actions. This means that, whereas the free energy is dependent on the observations, here we have a dependency on the policy, $$ \pi $$ , which, in turn, conditions the probability of the future observations!

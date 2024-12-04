@@ -30,7 +30,7 @@ To formulate the FEP the founding question should probably be "what is a thing?"
 
 
 <div style="text-align: center;">
-  <img src="../images/markov.png" alt="Markov" width="250">
+  <img src="https://raw.githubusercontent.com/nph4rd/nph4rd.github.io/master/images/markov.png" alt="Markov" width="250">
   <p><em>My main man Markov</em></p>
 </div>
 
@@ -41,7 +41,7 @@ Now - the word *thing* could have a connotation for "objectness", but the *thing
 We may call the variables pertaining to the system itself their *internal* states and the variables pertaining to its environment as the *external* states, whereas the variables of the actual separation are its *blanket* states.
 
 <div style="text-align: center;">
-  <img src="../images/patterns.png" alt="Patterns" width="400">
+  <img src="https://raw.githubusercontent.com/nph4rd/nph4rd.github.io/master/images/patterns.png" alt="Patterns" width="400">
   <p><em>Image credit: <a href="https://x.com/FalseKnees">False Knees</a></em></p>
 </div>
 
@@ -50,7 +50,7 @@ So far so good! We may imagine many boundaries :) but what's the point? Why care
 Keeping this in mind, the FEP borrows [^1] from the concept of a Markov blanket to conceptualize this *separation* between system and its environment, and it goes further into a more functionally segregated question: what types of *separation* might there be between a system that effectively persists over time and its environment? Arguably, there are two: **actions** and **observations**; that is, states through which a system can influence its environment, and states through which a system is influenced by its environment. So, we end-up with an action-perception loop similar to what we see in reinforcement learning and other fields. We may call these special systems **agents**.
 
 <div style="text-align: center;">
-  <img src="../images/shinji.png" alt="Shinji agent" width="400">
+  <img src="https://raw.githubusercontent.com/nph4rd/nph4rd.github.io/master/images/shinji.png" alt="Shinji agent" width="400">
 </div>
 
 
@@ -108,7 +108,7 @@ With these re-formulations in mind, we can see that the FEP provides an elegant 
 ## The step towards active inference
 
 <div style="text-align: center;">
-  <img src="../images/exploration_vs_exploitation.png" alt="Exploration vs Exploitation" width="400">
+  <img src="https://raw.githubusercontent.com/nph4rd/nph4rd.github.io/master/images/exploration_vs_exploitation.png" alt="Exploration vs Exploitation" width="400">
 </div>
 
 Active inference is the extension of the FEP to make sense of streams of observations/states into the future, and, as such, it has a prospective nature, shedding a light into planning and decision-making.
@@ -159,7 +159,7 @@ For anyone relatively familiar with the (perhaps more widely known) ideas of rei
 Indeed, there are no substantial practical difference between the two. Reinforcement learning is formalized with the concept of a [Markov decision process](https://en.wikipedia.org/wiki/Markov_decision_process) (MDP).
 
 <div style="text-align: center;">
-  <img src="../images/mdp.png" alt="MDP" width="500">
+  <img src="https://raw.githubusercontent.com/nph4rd/nph4rd.github.io/master/images/mdp.png" alt="MDP" width="500">
   <p><em>MDP diagram taken from <a href="http://incompleteideas.net/book/the-book-2nd.html">Reinforcement Learning: An Introduction</a> by Sutton & Barto</em></p>
 </div>
 

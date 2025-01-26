@@ -47,7 +47,6 @@ I will try to use the following categories during the series and tag each post w
 - Other
     - Embeddings
     - Quantization
-    - Evaluation
 
 I think the list above might have some chronological sense, but I would not want to commit to a specific order, so I'll consider it to be an unordered list. Also, FWIW: I think I'll leave this base entry as a draft while I work on the rest. That way I can come back to refine the categorization :)
 

@@ -17,9 +17,9 @@ html {
 }
 
 body {
-  background: #ffffff;
+  background: $base;
   font: 18px/1.4 'Source Serif Pro', serif;
-  color: #000000;
+  color: $text;
 }
 
 .container {
@@ -36,7 +36,7 @@ h4,
 h5,
 h6 {
   font-family: 'Source Serif Pro', serif;
-  color: #000000;
+  color: $mauve;
   font-weight: bold;
 
   line-height: 1.7;
@@ -76,14 +76,14 @@ p {
 }
 
 a {
-  color: #333333;
+  color: $blue;
   text-decoration: none;
   cursor: pointer;
   text-decoration: underline;
 
   &:hover,
   &:active {
-    color: #666666;
+    color: $lavender;
     text-decoration: underline;
   }
 }
@@ -144,13 +144,13 @@ small {
 
 // Specify the color of the selection
 ::-moz-selection {
-  color: $black;
-  background: #d2c8da;
+  color: $text;
+  background: $mauve;
 }
 
 ::selection {
-  color: $black;
-  background: #d2c8da;
+  color: $text;
+  background: $mauve;
 }
 
 // Nicolas Gallagher's micro clearfix hack
@@ -179,7 +179,7 @@ small {
 
 .masthead {
   padding: 20px 0;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid $surface1;
 
   @include mobile {
     text-align: center;
@@ -215,7 +215,7 @@ small {
 
 .site-name {
   margin: 0;
-  color: #000000;
+  color: $flamingo;
   cursor: pointer;
   font-family: 'Source Serif Pro', serif;
   font-weight: 300;
@@ -248,14 +248,14 @@ nav {
 
   a {
     margin-left: 20px;
-    color: #000000;
+    color: $sapphire;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
 
     @include mobile {
       margin: 0 10px;
-      color: #000000;
+      color: $sapphire;
     }
   }
 }
@@ -286,9 +286,9 @@ nav {
 .post {
   blockquote {
     margin: 1.8em .8em;
-    border-left: 2px solid $gray;
+    border-left: 2px solid $teal;
     padding: 0.1em 1em;
-    color: $gray;
+    color: $subtext0;
     font-size: 22px;
     font-style: italic;
   }
@@ -331,7 +331,7 @@ a.footref {
 
 // Shade `text`
 code.highlighter-rouge {
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: $surface0;
 }
 
 // Table formatting
@@ -341,7 +341,7 @@ td,
 th {
   border-collapse: collapse;
   border-spacing: 0;
-  border: 1px solid #c0c0c0;
+  border: 1px solid $surface1;
 }
 
 .post th {
@@ -350,7 +350,7 @@ th {
 }
 
 .post table tr:nth-child(2n) {
-  background-color: #f8f8f8;
+  background-color: $surface0;
 }
 
 .post td {
@@ -366,7 +366,7 @@ code {
   white-space: pre;
   font-size: 80%;
   line-height: 1.0;
-  color: #666666;
+  color: $peach;
 }
 
 pre {
@@ -374,11 +374,12 @@ pre {
   white-space: pre;
   font-size: 80%;
   line-height: 1.0;
+  background-color: $mantle;
 }
 
 pre.radareasm {
-  background-color: #000000;
-  color: #c0c0c0;
+  background-color: $crust;
+  color: $subtext1;
   overflow: scroll;
 }
 

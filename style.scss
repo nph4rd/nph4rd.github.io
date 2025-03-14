@@ -380,7 +380,20 @@ pre {
 pre.radareasm {
   background-color: $crust;
   color: $subtext1;
-  overflow: scroll;
+  overflow: auto;
+  scrollbar-color: $crust $crust;
+  scrollbar-width: thin;
+  
+  &::-webkit-scrollbar {
+    background-color: $crust;
+    height: 8px;
+    width: 8px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: $surface0;
+    border-radius: 4px;
+  }
 }
 
 .pagination {

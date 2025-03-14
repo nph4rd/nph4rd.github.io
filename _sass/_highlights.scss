@@ -7,7 +7,20 @@ div.highlight {
   -webkit-box-shadow: 3px 3px rgba(17, 17, 27, 0.2);
   box-shadow: 3px 3px rgba(17, 17, 27, 0.2);
   margin: 20px 0 20px 0;
-  overflow: scroll;
+  overflow: auto;
+  scrollbar-color: $mantle $mantle;
+  scrollbar-width: thin;
+  
+  &::-webkit-scrollbar {
+    background-color: $mantle;
+    height: 8px;
+    width: 8px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: $surface0;
+    border-radius: 4px;
+  }
 }
 
 code {

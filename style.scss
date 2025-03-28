@@ -334,47 +334,51 @@ code.highlighter-rouge {
   background-color: $surface0;
 }
 
-// Fix for LaTeX equations
+/* CRITICAL FIX: Make MathJax render properly */
 .MathJax_Display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* For the INNER content of the MathJax equation */
+.MathJax_Display > .MathJax {
+  max-width: 100%;
   overflow-x: auto !important;
-  overflow-y: hidden !important;
-  padding-bottom: 5px !important; /* Add padding to ensure scrollbar doesn't overlap content */
-  max-width: 100% !important;
 }
 
-// For all display math
-.MathJax_Display > span {
-  max-width: 100% !important;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
+/* MathJax display mode container */
+.mjx-chtml.MJXc-display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 5px;
 }
 
-// Improve inline LaTeX display
-.MathJax {
-  max-width: 100% !important;
+/* SVG container */
+.MathJax_SVG_Display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 5px;
 }
 
-// For all MathJax content
-.MathJax_CHTML, .MathJax_SVG, .MathJax_Display, .MathJax {
-  @include mobile {
-    font-size: 90% !important;
-  }
-}
-
-// Ensure container allows scrolling on mobile
+/* Mobile-specific fixes */
 @include mobile {
+  /* Make MathJax content fit mobile width but still be readable */
+  .MathJax, .MathJax_Display, .MathJax_Preview {
+    font-size: 100% !important;
+  }
+  
+  /* Fix container overflow */
+  .post, .entry, .container {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  
+  /* Hide MathJax message */
   #MathJax_Message {
     display: none !important;
-  }
-  
-  .container {
-    overflow-x: hidden !important;
-    max-width: 100% !important;
-  }
-  
-  // Force all equations to be scrollable instead of wrapped
-  .entry {
-    overflow-x: hidden !important;
   }
 }
 

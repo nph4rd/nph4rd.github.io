@@ -58,38 +58,30 @@
 {% if page.usemathjax %}
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-      TeX: { 
-        equationNumbers: { autoNumber: "AMS" },
-        extensions: ["AMSmath.js", "AMSsymbols.js"]
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']],
+        processEscapes: true
       },
-      "HTML-CSS": { 
-        linebreaks: { automatic: false },
-        scale: 100,
-        matchFontHeight: true,
-        styles: {
-          ".MathJax_Display": {
-            "text-align": "center",
-            margin: "0.5em 0",
-            "background-color": "transparent",
-            "width": "auto !important"
-          }
-        },
-        availableFonts: ["TeX"],
-        preferredFont: "TeX",
-        webFont: "TeX"
+      TeX: { 
+        equationNumbers: { autoNumber: "AMS" }
       },
       CommonHTML: {
-        linebreaks: { automatic: false },
         scale: 100,
-        matchFontHeight: true
+        minScaleAdjust: 100
       },
-      SVG: { 
-        linebreaks: { automatic: false },
-        scale: 100,
-        matchFontHeight: true
+      "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX", "TeX"],
+        minScaleAdjust: 100,
+        mtextFontInherit: true
+      },
+      SVG: {
+        minScaleAdjust: 100,
+        mtextFontInherit: true
       },
       messageStyle: "none"
     });
   </script>
-  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 {% endif %}

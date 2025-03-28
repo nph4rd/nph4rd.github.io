@@ -63,22 +63,30 @@
         extensions: ["AMSmath.js", "AMSsymbols.js"]
       },
       "HTML-CSS": { 
-        linebreaks: { automatic: true },
+        linebreaks: { automatic: false },
         scale: 100,
+        matchFontHeight: true,
         styles: {
           ".MathJax_Display": {
             "text-align": "center",
             margin: "0.5em 0",
-            "background-color": "transparent"
+            "background-color": "transparent",
+            "width": "auto !important"
           }
         },
         availableFonts: ["TeX"],
         preferredFont: "TeX",
         webFont: "TeX"
       },
+      CommonHTML: {
+        linebreaks: { automatic: false },
+        scale: 100,
+        matchFontHeight: true
+      },
       SVG: { 
-        linebreaks: { automatic: true },
-        scale: 100
+        linebreaks: { automatic: false },
+        scale: 100,
+        matchFontHeight: true
       },
       messageStyle: "none"
     });

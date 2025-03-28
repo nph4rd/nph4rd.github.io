@@ -144,13 +144,13 @@ small {
 
 // Specify the color of the selection
 ::-moz-selection {
-  color: $text;
-  background: $mauve;
+  color: $base;
+  background: $sky;
 }
 
 ::selection {
-  color: $text;
-  background: $mauve;
+  color: $base;
+  background: $sky;
 }
 
 // Nicolas Gallagher's micro clearfix hack
@@ -366,7 +366,7 @@ code {
   white-space: pre;
   font-size: 80%;
   line-height: 1.0;
-  color: $peach;
+  color: $sapphire;
 }
 
 pre {

@@ -339,11 +339,38 @@ code.highlighter-rouge {
   overflow-x: auto;
   overflow-y: hidden;
   padding-bottom: 5px; /* Add padding to ensure scrollbar doesn't overlap content */
+  
+  @include mobile {
+    font-size: 100% !important;
+    zoom: 1 !important;
+    -webkit-text-size-adjust: 100%;
+  }
 }
 
 // Improve inline LaTeX display
 .MathJax {
   max-width: 100%;
+  
+  @include mobile {
+    font-size: 100% !important;
+    zoom: 1 !important;
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+// Additional fix for mobile equations
+@include mobile {
+  .MathJax_CHTML {
+    font-size: 100% !important;
+    zoom: 1 !important;
+  }
+  
+  .MathJax_SVG_Display, 
+  .MathJax_Display {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+  }
 }
 
 // Table formatting

@@ -11,6 +11,10 @@
 
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    
+    {% if page.usemathjax %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    {% endif %}
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
@@ -60,18 +64,23 @@
       },
       "HTML-CSS": { 
         linebreaks: { automatic: true },
-        scale: 90,
+        scale: 100,
         styles: {
           ".MathJax_Display": {
             "text-align": "center",
             margin: "0.5em 0",
             "background-color": "transparent"
           }
-        }
+        },
+        availableFonts: ["TeX"],
+        preferredFont: "TeX",
+        webFont: "TeX"
       },
       SVG: { 
-        linebreaks: { automatic: true } 
-      }
+        linebreaks: { automatic: true },
+        scale: 100
+      },
+      messageStyle: "none"
     });
   </script>
   <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>

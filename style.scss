@@ -334,6 +334,18 @@ code.highlighter-rouge {
   background-color: $surface0;
 }
 
+// Fix for LaTeX equations that are too long
+.MathJax_Display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 5px; /* Add padding to ensure scrollbar doesn't overlap content */
+}
+
+// Improve inline LaTeX display
+.MathJax {
+  max-width: 100%;
+}
+
 // Table formatting
 .post table,
 tr,

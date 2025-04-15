@@ -144,8 +144,8 @@ small {
 
 // Specify the color of the selection
 ::-moz-selection {
-  color: $base;
-  background: $sky;
+  color: $text;
+  background: $mauve;
 }
 
 ::selection {
@@ -414,7 +414,7 @@ code {
   white-space: pre;
   font-size: 80%;
   line-height: 1.0;
-  color: $sapphire;
+  color: $peach;
 }
 
 pre {

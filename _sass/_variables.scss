@@ -1,47 +1,17 @@
-
 //
 // VARIABLES
 //
 
-// Catppuccin Latte Colors
-$base: #eff1f5; // Base
-$mantle: #e6e9ef; // Mantle
-$crust: #dce0e8; // Crust
+// Colors
+$blue: #4183C4;
 
-$text: #4c4f69; // Text
-$subtext0: #6c6f85; // Subtext0
-$subtext1: #5c5f77; // Subtext1
-
-$surface0: #ccd0da; // Surface0
-$surface1: #bcc0cc; // Surface1
-$surface2: #acb0be; // Surface2
-
-$overlay0: #9ca0b0; // Overlay0
-$overlay1: #8c8fa1; // Overlay1
-$overlay2: #7c7f93; // Overlay2
-
-$blue: #1e66f5; // Blue
-$lavender: #7287fd; // Lavender
-$sapphire: #209fb5; // Sapphire
-$sky: #04a5e5; // Sky
-$teal: #179299; // Teal
-$green: #40a02b; // Green
-$yellow: #df8e1d; // Yellow
-$peach: #fe640b; // Peach
-$maroon: #e64553; // Maroon
-$red: #d20f39; // Red
-$mauve: #8839ef; // Mauve
-$pink: #ea76cb; // Pink
-$flamingo: #dd7878; // Flamingo
-$rosewater: #dc8a78; // Rosewater
-
-// Legacy variables mapped to Catppuccin
-$black: $crust;
-$darkerGray: $mantle;
-$darkGray: $base;
-$gray: $surface2;
-$lightGray: $surface0;
-$white: $text;
+// Grays
+$black: #000;
+$darkerGray: #222;
+$darkGray: #333;
+$gray: #666;
+$lightGray: #eee;
+$white: #fff;
 
 // Font stacks
 $helvetica: Helvetica, Arial, sans-serif;

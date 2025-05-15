@@ -17,9 +17,9 @@ html {
 }
 
 body {
-  background: $base;
+  background: #ffffff;
   font: 17px/1.4 'Source Serif Pro', serif;
-  color: $text;
+  color: #000000;
 }
 
 .container {
@@ -36,7 +36,7 @@ h4,
 h5,
 h6 {
   font-family: 'Source Serif Pro', serif;
-  color: $mauve;
+  color: #000000;
   font-weight: bold;
 
   line-height: 1.7;
@@ -76,14 +76,14 @@ p {
 }
 
 a {
-  color: $blue;
+  color: #333333;
   text-decoration: none;
   cursor: pointer;
   text-decoration: underline;
 
   &:hover,
   &:active {
-    color: $lavender;
+    color: #666666;
     text-decoration: underline;
   }
 }
@@ -144,13 +144,13 @@ small {
 
 // Specify the color of the selection
 ::-moz-selection {
-  color: $base;
-  background: $sky;
+  color: $black;
+  background: #d2c8da;
 }
 
 ::selection {
-  color: $base;
-  background: $sky;
+  color: $black;
+  background: #d2c8da;
 }
 
 // Nicolas Gallagher's micro clearfix hack
@@ -179,7 +179,7 @@ small {
 
 .masthead {
   padding: 20px 0;
-  border-bottom: 1px solid $surface1;
+  border-bottom: 1px solid #000000;
 
   @include mobile {
     text-align: center;
@@ -215,7 +215,7 @@ small {
 
 .site-name {
   margin: 0;
-  color: $flamingo;
+  color: #000000;
   cursor: pointer;
   font-family: 'Source Serif Pro', serif;
   font-weight: 300;
@@ -248,14 +248,14 @@ nav {
 
   a {
     margin-left: 20px;
-    color: $sapphire;
+    color: #000000;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
 
     @include mobile {
       margin: 0 10px;
-      color: $sapphire;
+      color: #000000;
     }
   }
 }
@@ -286,9 +286,9 @@ nav {
 .post {
   blockquote {
     margin: 1.8em .8em;
-    border-left: 2px solid $teal;
+    border-left: 2px solid $gray;
     padding: 0.1em 1em;
-    color: $subtext0;
+    color: $gray;
     font-size: 22px;
     font-style: italic;
   }
@@ -331,7 +331,7 @@ a.footref {
 
 // Shade `text`
 code.highlighter-rouge {
-  background-color: $surface0;
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 /* CRITICAL FIX: Make MathJax render properly */
@@ -389,7 +389,7 @@ td,
 th {
   border-collapse: collapse;
   border-spacing: 0;
-  border: 1px solid $surface1;
+  border: 1px solid #c0c0c0;
 }
 
 .post th {
@@ -398,7 +398,7 @@ th {
 }
 
 .post table tr:nth-child(2n) {
-  background-color: $surface0;
+  background-color: #f8f8f8;
 }
 
 .post td {
@@ -414,7 +414,7 @@ code {
   white-space: pre;
   font-size: 80%;
   line-height: 1.0;
-  color: $sapphire;
+  color: #666666;
 }
 
 pre {
@@ -422,24 +422,23 @@ pre {
   white-space: pre;
   font-size: 80%;
   line-height: 1.0;
-  background-color: $mantle;
 }
 
 pre.radareasm {
-  background-color: $crust;
-  color: $subtext1;
+  background-color: #000000;
+  color: #c0c0c0;
   overflow: auto;
-  scrollbar-color: $crust $crust;
+  scrollbar-color: #000000 #000000;
   scrollbar-width: thin;
   
   &::-webkit-scrollbar {
-    background-color: $crust;
+    background-color: #000000;
     height: 8px;
     width: 8px;
   }
   
   &::-webkit-scrollbar-thumb {
-    background-color: $surface0;
+    background-color: #eee;
     border-radius: 4px;
   }
 }

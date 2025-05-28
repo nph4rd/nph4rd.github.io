@@ -4,7 +4,7 @@ title: ABOUT
 permalink: /about/
 ---
 
-ex Machine Learning Engineer at [Bitso](https://bitso.com/).
+ex Machine Learning Engineer at [Bitso](https://bitso.com/), now doing computer-use stuff at [Kentauros AI](https://www.kentauros.ai/)
 
 ### Contact:
 

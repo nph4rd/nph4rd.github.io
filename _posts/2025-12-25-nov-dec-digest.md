@@ -24,7 +24,7 @@ To end the year:
 - [hbd chick](https://x.com/hbdchick)'s post on the [Hajnal line](https://hbdchick.wordpress.com/2014/03/10/big-summary-post-on-the-hajnal-line/).
 - Casey Handmer's [Energy Predictions 2025](https://caseyhandmer.wordpress.com/2025/12/08/energy-predictions-2025/).
 - About the undersea wall from 5000 BC, that was [recently found in France](https://www.bbc.com/news/articles/crk7lg1j146o).
-- Finally, I heard from my beautiful wife, about the word [木漏れ日](https://en.wiktionary.org/wiki/%E6%9C%A8%E6%BC%8F%E3%82%8C%E6%97%A5) (komorebi) to refer to "sunlight filtering through trees", and I dedicate this photo I took to her:
+- Finally, I heard from my beautiful wife about the word [木漏れ日](https://en.wiktionary.org/wiki/%E6%9C%A8%E6%BC%8F%E3%82%8C%E6%97%A5) (komorebi) to refer to "sunlight filtering through trees", and I dedicate this photo I took to her:
 
 <div style="text-align: center;">
   <img src="/images/komorebi.jpg" alt="" width="400">

@@ -3,7 +3,9 @@
 //
 // IMPORTS
 //
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap');
+// Berkeley Mono font (assumed to be installed locally or via CDN)
+// Add @font-face declaration here if you have the font files
+
 @import "reset";
 @import "variables";
 // Syntax highlighting @import is at the bottom of this file
@@ -18,14 +20,14 @@ html {
 
 body {
   background: $base;
-  font: 17px/1.4 'Source Serif Pro', serif;
+  font: 14px/1.4 'Berkeley Mono', monospace;
   color: $text;
 }
 
 .container {
   margin: 0 auto;
-  max-width: 900px;
-  padding: 0 10px;
+  max-width: 700px;
+  padding: 0 40px;
   width: 100%;
 }
 
@@ -35,7 +37,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Source Serif Pro', serif;
+  font-family: 'Berkeley Mono', monospace;
   color: $text;
   font-weight: bold;
 
@@ -49,9 +51,8 @@ h6 {
 }
 
 h1 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Berkeley Mono', monospace;
   font-size: 50px;
-  text-decoration: underline;
 
   a {
     color: inherit;
@@ -79,12 +80,10 @@ a {
   color: $blue;
   text-decoration: none;
   cursor: pointer;
-  text-decoration: underline;
 
   &:hover,
   &:active {
     color: $sapphire;
-    text-decoration: underline;
   }
 }
 
@@ -217,7 +216,7 @@ small {
   margin: 0;
   color: $text;
   cursor: pointer;
-  font-family: 'Source Serif Pro', serif;
+  font-family: 'Berkeley Mono', monospace;
   font-weight: 300;
   font-size: 28px;
   letter-spacing: 1px;
@@ -236,7 +235,7 @@ small {
 nav {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
-  font-family: 'Source Serif Pro', serif;
+  font-family: 'Berkeley Mono', monospace;
   font-size: 18px;
 
   @include mobile {
@@ -284,6 +283,14 @@ nav {
 
 
 .post {
+  p a, .entry p a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   blockquote {
     margin: 1.8em .8em;
     border-left: 2px solid $gray;
@@ -410,15 +417,15 @@ th {
 
 // Specific (code samples, radare-exported asm)
 code {
-  font-family: monospace;
+  font-family: 'Berkeley Mono', monospace;
   white-space: pre;
-  font-size: 80%;
+  font-size: 90%;
   line-height: 1.0;
   color: $subtext0;
 }
 
 pre {
-  font-family: monospace;
+  font-family: 'Berkeley Mono', monospace;
   white-space: pre;
   font-size: 80%;
   line-height: 1.0;

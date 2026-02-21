@@ -84,6 +84,9 @@ plugins:
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
   - jekyll-paginate
 
+# Build posts with future dates (accessible via direct URL)
+future: true
+
 # Exclude these files from your production _site
 exclude:
   - Gemfile

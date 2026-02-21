@@ -390,6 +390,10 @@ code.highlighter-rouge {
 }
 
 // Table formatting
+.post table {
+  margin: 0 auto;
+}
+
 .post table,
 tr,
 td,
@@ -402,10 +406,6 @@ th {
 .post th {
   padding: 6px 13px;
   font-weight: bold;
-}
-
-.post table tr:nth-child(2n) {
-  background-color: $surface0;
 }
 
 .post td {
@@ -429,6 +429,13 @@ pre {
   white-space: pre;
   font-size: 80%;
   line-height: 1.0;
+  overflow-x: auto;
+}
+
+.wrap pre,
+.wrap code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 pre.radareasm {
@@ -504,15 +511,15 @@ sup[id^="fnref"] {
 .footnotes {
     margin-top: 2em;
     font-size: 0.9em;
-    
+
     ol {
         margin-top: 0.5em;
     }
-    
+
     li {
         margin-bottom: 0.5em;
     }
-    
+
     .reversefootnote {
         text-decoration: none;
         margin-left: 0.3em;
@@ -520,4 +527,50 @@ sup[id^="fnref"] {
             text-decoration: underline;
         }
     }
+}
+
+// Table of contents - only visible when margin space available
+.toc {
+  display: none;
+  position: fixed;
+  top: 120px;
+  left: calc(50% + 380px);
+  width: 200px;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+  font-size: 0.75em;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 0.4em;
+    line-height: 1.3;
+
+    &.h3 {
+      padding-left: 1em;
+    }
+  }
+
+  a {
+    color: $overlay0;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $text;
+    }
+
+    &.active {
+      color: $lavender;
+    }
+  }
+
+  // Only show when viewport is wide enough for margins
+  @media screen and (min-width: 1200px) {
+    display: block;
+  }
 }

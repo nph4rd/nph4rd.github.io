@@ -436,6 +436,9 @@ pre {
 .wrap code {
   white-space: pre-wrap;
   word-wrap: break-word;
+  font-size: 100%;
+  line-height: 1.4;
+  overflow: hidden;
 }
 
 pre.radareasm {

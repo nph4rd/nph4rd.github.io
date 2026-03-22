@@ -45,13 +45,21 @@ layout: default
   }
 
   const ul = document.createElement('ul');
+  let h2Count = 0, h3Count = 0;
   headings.forEach(h => {
     if (!h.id) return;
     const li = document.createElement('li');
     li.className = h.tagName.toLowerCase();
     const a = document.createElement('a');
     a.href = '#' + h.id;
-    a.textContent = h.textContent;
+    if (h.tagName === 'H2') {
+      h2Count++;
+      h3Count = 0;
+      a.textContent = h2Count + '. ' + h.textContent;
+    } else {
+      h3Count++;
+      a.textContent = h2Count + '.' + h3Count + ' ' + h.textContent;
+    }
     li.appendChild(a);
     ul.appendChild(li);
   });

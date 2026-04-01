@@ -33,9 +33,6 @@ body {
   z-index: -1;
   pointer-events: none;
 
-  @include mobile {
-    opacity: 0.4;
-  }
 }
 
 .container {

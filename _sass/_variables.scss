@@ -65,4 +65,10 @@ $georgia: Georgia, serif;
   border-radius: 2em;
   box-shadow: 0 0 1.5em 1em $base;
   display: inline-block;
+
+  @media screen and (max-width: 640px) {
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
 }

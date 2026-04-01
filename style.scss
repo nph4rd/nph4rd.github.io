@@ -34,7 +34,7 @@ body {
   pointer-events: none;
 
   @include mobile {
-    display: none;
+    opacity: 0.4;
   }
 }
 

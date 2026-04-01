@@ -53,12 +53,12 @@
       float phase = s.z;
 
       // Slowly drifting feed/kill in the "worms/maze" regime
-      // Creates connected, flowing patterns rather than isolated spots
+      // Tighter range to avoid drifting into spots/solitons
       float t = u_time * 0.03;
       float spatialVar = sin(uv.x * 4.0 + t) * cos(uv.y * 3.0 - t * 0.7);
 
-      float feed = 0.029 + 0.004 * sin(t * 0.41 + spatialVar);
-      float kill = 0.057 + 0.003 * cos(t * 0.31 + spatialVar * 1.3);
+      float feed = 0.030 + 0.002 * sin(t * 0.41 + spatialVar);
+      float kill = 0.057 + 0.001 * cos(t * 0.31 + spatialVar * 1.3);
 
       float Da = 0.21;
       float Db = 0.105;
@@ -76,11 +76,11 @@
       float nPhase = phase + 0.02 * lapPhase + 0.0003 * sin(t * 0.7 + phase * 6.2832);
       nPhase = fract(nPhase);
 
-      // Continuous seeding: randomly inject small b spots to keep
-      // the simulation alive across the whole grid
+      // Rare seeding: inject b near existing activity to grow
+      // connected structures rather than isolated singletons
       float r = hash(vec3(xy, u_seed));
       float r2 = hash(vec3(xy + 71.0, u_seed + 137.0));
-      if (r > 0.999) {
+      if (r > 0.9995 && avg.y > 0.01) {
         nb = max(nb, 0.15 + r2 * 0.15);
         na = min(na, 0.7);
       }

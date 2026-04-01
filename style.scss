@@ -307,9 +307,15 @@ nav {
     @include hexells-halo;
   }
 
-  table, blockquote, pre, .highlight, img {
+  table, blockquote, pre, .highlight {
     border-radius: 0.4em;
     display: block;
+  }
+
+  img {
+    border-radius: 0.4em;
+    display: block;
+    margin: 0 auto;
   }
 }
 

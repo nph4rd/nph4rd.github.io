@@ -24,6 +24,16 @@ body {
   color: $text;
 }
 
+#hexells-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
 .container {
   margin: 0 auto;
   max-width: 700px;
@@ -190,6 +200,7 @@ small {
   width: 70px;
   height: 70px;
   margin-right: 15px;
+  @include hexells-halo;
 
   @include mobile {
     float: none;
@@ -220,12 +231,14 @@ small {
   font-weight: 300;
   font-size: 28px;
   letter-spacing: 1px;
+  @include hexells-halo;
 }
 
 .site-description {
   margin: -5px 0 0 0;
   color: $gray;
   font-size: 16px;
+  @include hexells-halo;
 
   @include mobile {
     margin: 3px 0;
@@ -237,6 +250,7 @@ nav {
   margin-top: 23px; // @TODO: Vertically middle align
   font-family: 'Berkeley Mono', monospace;
   font-size: 18px;
+  @include hexells-halo;
 
   @include mobile {
     float: none;
@@ -266,6 +280,12 @@ nav {
 .posts>.post {
     margin-bottom: 0;
     padding-bottom: 0;
+    position: relative;
+
+    h1 {
+      display: inline-block;
+      @include hexells-halo;
+    }
 }
 
 .posts>.post + .post {
@@ -278,9 +298,28 @@ nav {
 
 .post h1 {
     line-height: 1.0;
+    @include hexells-halo;
 }
 
+.post .entry {
+  p, h2, h3, h4, ul, ol, table, blockquote, pre, .highlight, img {
+    @include hexells-halo;
+  }
+}
 
+.post .date, .post .tags, .post .categories {
+  @include hexells-halo;
+}
+
+.page {
+  h1, p, ul, ol {
+    @include hexells-halo;
+  }
+}
+
+.pagination {
+  @include hexells-halo;
+}
 
 .post {
   p a, .entry p a {

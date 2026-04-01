@@ -62,7 +62,7 @@ $georgia: Georgia, serif;
 // Hexells readability halo
 @mixin hexells-halo {
   background: $base;
-  border-radius: 1em;
+  border-radius: 2em;
   box-shadow: 0 0 1.5em 1em $base;
   display: inline-block;
 }

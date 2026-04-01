@@ -128,13 +128,20 @@
     }
 
     vec3 palette(float t) {
-      if (t < 0.15) return mix(c_base, c_mantle, t / 0.15);
-      if (t < 0.3)  return mix(c_mantle, c_surface0, (t - 0.15) / 0.15);
-      if (t < 0.5)  return mix(c_surface0, c_lavender, (t - 0.3) / 0.2);
-      if (t < 0.65) return mix(c_lavender, c_sapphire, (t - 0.5) / 0.15);
-      if (t < 0.8)  return mix(c_sapphire, c_teal, (t - 0.65) / 0.15);
-      if (t < 0.9)  return mix(c_teal, c_mauve, (t - 0.8) / 0.1);
-      return mix(c_mauve, c_pink, (t - 0.9) / 0.1);
+      // Much lighter palette - blend accent colors with base
+      // so even the strongest colors stay pastel
+      vec3 lightLavender = mix(c_base, c_lavender, 0.35);
+      vec3 lightSapphire = mix(c_base, c_sapphire, 0.3);
+      vec3 lightTeal     = mix(c_base, c_teal, 0.3);
+      vec3 lightMauve    = mix(c_base, c_mauve, 0.25);
+      vec3 lightPink     = mix(c_base, c_pink, 0.25);
+
+      if (t < 0.2) return mix(c_base, c_mantle, t / 0.2);
+      if (t < 0.4) return mix(c_mantle, lightLavender, (t - 0.2) / 0.2);
+      if (t < 0.6) return mix(lightLavender, lightSapphire, (t - 0.4) / 0.2);
+      if (t < 0.8) return mix(lightSapphire, lightTeal, (t - 0.6) / 0.2);
+      if (t < 0.9) return mix(lightTeal, lightMauve, (t - 0.8) / 0.1);
+      return mix(lightMauve, lightPink, (t - 0.9) / 0.1);
     }
 
     void main() {
@@ -366,7 +373,7 @@
       gl.uniform2f(visLocs.u_size, SIM_W, SIM_H);
       gl.uniform2f(visLocs.u_resolution, canvas.width, canvas.height);
       gl.uniform1f(visLocs.u_time, now * 0.001);
-      gl.uniform1f(visLocs.u_opacity, 0.4);
+      gl.uniform1f(visLocs.u_opacity, 0.5);
 
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 

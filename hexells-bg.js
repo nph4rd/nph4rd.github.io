@@ -366,7 +366,7 @@
       gl.uniform2f(visLocs.u_size, SIM_W, SIM_H);
       gl.uniform2f(visLocs.u_resolution, canvas.width, canvas.height);
       gl.uniform1f(visLocs.u_time, now * 0.001);
-      gl.uniform1f(visLocs.u_opacity, 0.6);
+      gl.uniform1f(visLocs.u_opacity, 0.4);
 
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 

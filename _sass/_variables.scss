@@ -58,8 +58,3 @@ $georgia: Georgia, serif;
     @content;
   }
 }
-
-// Hexells readability halo
-@mixin hexells-halo {
-  border-radius: 2em;
-}

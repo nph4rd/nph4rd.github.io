@@ -164,7 +164,7 @@ Ya nunca pude contarle a mi abuelo que planté los aguacates y los liquidámbare
 
 En ese momento fugaz que compartimos en su cumpleaños, sentados bajo la pérgola, cobijados por la música, la comida y los cariños de la familia, vimos corriendo y sonando como campanitas a sus otros dos bisnietos, Renato y Ricardo, y con esa emoción que a veces le quebraba un poco la voz me dijo:
 
-> _"El mundo no se va a acabar"_
+> _"¡Mira! ¡Mira, mijo! ¡El mundo no se va a acabar!"_
 
 Te voy a extrañar mucho, abuelo.
 

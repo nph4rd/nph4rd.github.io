@@ -23,7 +23,7 @@ Y al final agregó un:
 
 En mi mente sonó el eco de las palabras que en otra ocasión me dijo -- también por llamada, hace ya muchos años -- y que para mí siempre han sido un bálsamo para el corazón:
 
-> _"No tenemos que estar cerquita para querernos."_
+> _"Tú sabes que no tenemos que estar cerquita para querernos."_
 
 <div style="text-align: center;">
   <img src="https://raw.githubusercontent.com/nph4rd/nph4rd.github.io/master/images/abuelo-cumpleanos.jpeg" alt="" width="500">
@@ -57,15 +57,15 @@ Fue entonces el día del ritual y recibió a Fabio. Lo acarició. Me dijo que es
   <img src="https://raw.githubusercontent.com/nph4rd/nph4rd.github.io/master/images/abuelo-fabio.png" alt="" width="500">
 </div>
 
-Como siempre, cuando me acerqué más, me agarró firmemente del brazo y dijo: _"Mi 'Eure', ¿ya comieron? Échense un taco."_ Así que, casi como si los árboles hubieran sido sólo una excusa para vernos, nos quedamos la tarde.
+Como siempre, cuando me acerqué más, me agarró firmemente del brazo y dijo: _"Mi 'Eure', ¿ya comieron? Échense un taco."_ Así que, casi como si los árboles hubieran sido sólo una excusa para vernos, nos quedamos el resto de la tarde.
 
 Fue la única vez que mi abuelo vio a Fabio. Conoció a mi hijo. Siento que fue un regalo del universo que esa última tarde de mayo hubiéramos compartido tiempo juntos.
 
 ## Príncipe 'Eure'
 
-Cuando nos mudamos a Inglaterra, en 2007, mi abuelo lloró. Yo nunca lo había visto llorar. Creo que tuvo miedo de que estando en el extranjero alguien me hiciera "sentir menos", al menos así lo interpreté yo. Recuerdo que me dijo que tenía que saber que si algún día me sentía triste o _fuera de lugar_ "allá" tenía que recordar que "acá" yo era "un príncipe".
+Cuando nos mudamos a Inglaterra, en 2007, mi abuelo lloró. Yo nunca lo había visto llorar. Creo que tuvo miedo de que estando en el extranjero alguien me hiciera "sentir menos". Al menos así lo interpreté yo. Recuerdo que me dijo que tenía que saber que si algún día me sentía triste o _fuera de lugar_ "allá" tenía que recordar que "acá" yo era "un príncipe".
 
-Le gustaba contarme anécdotas (siempre las mismas) para decirme que siempre fui un niño orgulloso y confiado. Mil veces, o más, contó sobre aquella vez que salvé a mis primas de una araña y me convertí en "el Eure"; de aquella otra en la que, aún con fiebre, me defendí de las bromas de mis primos mayores y corrí vengativamente detrás de ellos, mientras mi tío Pollo le decía "este cabrón tiene clase"; y por último de la vez que consiguió a un muchacho, "el Camarón", en el rancho para que me enseñara cosas del campo, pero me rehusé porque indignado dije que "yo ya sabía todo" y que "no necesitaba que me enseñaran nada".
+Más grande ya le gustaba contarme anécdotas (siempre las mismas) para decirme que siempre fui un niño orgulloso y confiado. Mil veces, o más, contó sobre aquella vez que salvé a mis primas de una araña y me convertí en "el Eure"; de aquella otra en la que, aún con fiebre, me defendí de las bromas de mis primos mayores y corrí vengativamente detrás de ellos, mientras mi tío Pollo le decía "este cabrón tiene clase"; y por último de la vez que consiguió a un muchacho, "el Camarón", en el rancho para que me enseñara cosas del campo, pero me rehusé porque indignado dije que "yo ya sabía todo" y que "no necesitaba que me enseñaran nada".
 
 <div style="text-align: center;">
   <img src="https://raw.githubusercontent.com/nph4rd/nph4rd.github.io/master/images/abuelo-camioneta.jpg" alt="" width="500">
@@ -83,7 +83,7 @@ En 2008, escribió:
 
 > Quiero que lo último que se me apague antes de morir sean los ojos y los oídos para poder, aún postrado, seguir en la despedida, leyendo y oyendo hasta el final mi preciosa lengua.
 
-Para mí mi abuelo sí fue, desde luego, todas esas cosas, pero más grande aprendí que detrás de los libros y de las letras, entre líneas, sus palabras siempre buscaron inspirar amor y energía en mi vida. Yo guardo y atesoro eso más que una Biblioteca de Babel.
+Para mí mi abuelo sí fue, desde luego, todas esas cosas, pero más grande aprendí que detrás de los libros y de las letras, entre líneas, sus palabras -- al menos entre nosotros -- siempre buscaron inspirar amor y energía en mi vida. Yo guardo y atesoro eso más que una Biblioteca de Babel.
 
 En una de nuestras últimas pláticas largas le pregunté: _"Y bueno, abuelo, ¿tú qué piensas que queda cuando poco a poco se muere el cuerpo, e incluso se apagan los ojos, los oídos, la mente?"_. Dijo: _"Hijo, no tengo idea, pero es algo que he meditado mucho últimamente."_
 
@@ -154,7 +154,7 @@ Sé que mi abuelo siempre se fijó en el verdor.
 
 Creo también que pensó mucho en el acto de plantar en los últimos días de su vida. Además de los árboles que me regaló, varias veces me preguntó por los que de pequeños mi hermano Juan Carlos y yo plantamos frente a la casa del Lago de las Ánimas. Le aseguré que ahí siguen creciendo.
 
-Ya nunca pude contarle a mi abuelo que planté los aguacates y los liquidámbares que me regaló. Nunca más lo podré hacer, pero los árboles echarán raíz y hablarán por sí mismos.
+Ya nunca pude contarle a mi abuelo que sí planté los aguacates y los liquidámbares que me regaló. Nunca más lo podré hacer, pero los árboles echarán raíz y hablarán por sí mismos.
 
 <div style="text-align: center;">
   <img src="https://raw.githubusercontent.com/nph4rd/nph4rd.github.io/master/images/arbol.jpg" alt="" width="500">
@@ -165,6 +165,8 @@ Ya nunca pude contarle a mi abuelo que planté los aguacates y los liquidámbare
 En ese momento fugaz que compartimos en su cumpleaños, sentados bajo la pérgola, cobijados por la música, la comida y los cariños de la familia, vimos corriendo y sonando como campanitas a sus otros dos bisnietos, Renato y Ricardo, y con esa emoción que a veces le quebraba un poco la voz me dijo:
 
 > _"¡Mira! ¡Mira, mijo! ¡El mundo no se va a acabar!"_
+
+Nunca supe si lo dijo con su evidente doble sentido, pero así lo escuché, y se grabó por siempre en mi mente y mi corazón.
 
 Te voy a extrañar mucho, abuelo.
 

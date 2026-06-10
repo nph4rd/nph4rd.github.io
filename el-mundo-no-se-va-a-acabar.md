@@ -15,13 +15,13 @@ Hace menos de un mes en su festejo de cumpleaños 87 mi abuelo y yo tuvimos un m
 
 Me respondió:
 
-_"No te preocupes. Yo te entiendo. Además ya habrá tiempo para tener el viejo ritual y me traerán al chamaco para que lo conozca."_
+> _"No te preocupes. Yo te entiendo. Además ya habrá tiempo para tener el viejo ritual y me traerán al chamaco para que lo conozca."_
 
 Y al final agregó un _"Mi 'Eure', yo te quiero mucho. Te mando un abrazo y un beso para tu mujer, la hermosa Simonetta"_.
 
 En mi mente sonó el eco de las palabras que en otra ocasión me dijo -- también por llamada, hace ya muchos años -- y que para mí siempre han sido un bálsamo para el corazón:
 
-_"No tenemos que estar cerquita para querernos."_
+> _"No tenemos que estar cerquita para querernos."_
 
 <div style="text-align: center;">
   <img src="https://raw.githubusercontent.com/nph4rd/nph4rd.github.io/master/images/abuelo-cumpleanos.jpeg" alt="" width="500">
@@ -31,7 +31,7 @@ Me dio **tanto** gusto poder sentarme con él en su cumpleaños... en ese moment
 
 Unos días después, hace poco más de una semana, con su característico cariño -- el de alguien que muestra que te tuvo en sus pensamientos -- me llamó y me dijo:
 
-_"Mijo, tengo aquí unos palos: unos aguacates y unos liquidámbares. Son árboles de término. Se les dice así a los árboles en los linderos. Son para delimitar, como los mojones romanos. ¡Ah!, ¿verdad? ¡Tu abuelo no está tan pendejo como pensabas! Escuché que ahí en tu terreno tienen espacio para sembrarlos. Escríbele a tu tío 'el Macho' para que se pongan de acuerdo y pases por ellos."_
+> _"Mijo, tengo aquí unos palos: unos aguacates y unos liquidámbares. Son árboles de término. Se les dice así a los árboles en los linderos. Son para delimitar, como los mojones romanos. ¡Ah!, ¿verdad? ¡Tu abuelo no está tan pendejo como pensabas! Escuché que ahí en tu terreno tienen espacio para sembrarlos. Escríbele a tu tío 'el Macho' para que se pongan de acuerdo y pases por ellos."_
 
 Le contesté que tenía mucho trabajo en la semana, pero que podría pasar el fin por ellos.
 
@@ -43,11 +43,11 @@ Ese domingo (31 de mayo) mi abuela me escribió:
 
 Después de pasear un buen rato por el centro de Xalapa con Fabio, en la Parroquia y en los Berros, le dije a Gaby, camino a casa:
 
-_"Oye, quedé con mis abuelos de pasar a su casa. Mi abuelo quiere regalarnos unos árboles... Pero quizá ya es tarde y yo, la verdad, sí estoy cansado."_
+> _"Oye, quedé con mis abuelos de pasar a su casa. Mi abuelo quiere regalarnos unos árboles... Pero quizá ya es tarde y yo, la verdad, sí estoy cansado."_
 
 Gaby me dijo:
 
-_"Creo que mejor hay que pasar de una vez."_
+> _"Creo que mejor hay que pasar de una vez."_
 
 Fue entonces el día del ritual y recibió a Fabio. Lo acarició. Me dijo que estaba "muy chulo", y me agradeció por llevarlo en un susurro apenado, diciendo que él ya no podía moverse para ir a conocerlo.
 
@@ -163,7 +163,7 @@ Ya nunca pude contarle a mi abuelo que planté los aguacates y los liquidámbare
 
 En ese momento fugaz que compartimos en su cumpleaños, sentados bajo la pérgola, cobijados por la música, la comida y los cariños de la familia, vimos corriendo y sonando como campanitas a sus otros dos bisnietos, Renato y Ricardo, y con esa emoción que a veces le quebraba un poco la voz me dijo:
 
-_"El mundo no se va a acabar"_
+> _"El mundo no se va a acabar"_
 
 Te voy a extrañar mucho, abuelo.
 

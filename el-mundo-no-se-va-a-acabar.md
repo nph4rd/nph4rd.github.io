@@ -17,7 +17,9 @@ Me respondió:
 
 > _"No te preocupes. Yo te entiendo. Además ya habrá tiempo para tener el viejo ritual y me traerán al chamaco para que lo conozca."_
 
-Y al final agregó un _"Mi 'Eure', yo te quiero mucho. Te mando un abrazo y un beso para tu mujer, la hermosa Simonetta"_.
+Y al final agregó un:
+
+> _"Mi 'Eure', yo te quiero mucho. Te mando un abrazo y un beso para tu mujer, la hermosa 'Simonetta'"_.
 
 En mi mente sonó el eco de las palabras que en otra ocasión me dijo -- también por llamada, hace ya muchos años -- y que para mí siempre han sido un bálsamo para el corazón:
 
@@ -147,9 +149,8 @@ Sé que mi abuelo siempre se fijó en el verdor.
 > Clavel solo... balconero<br>
 > De dulzuras y verdores<br>
 > tengo el alma rebosando
-
-> _"Retrato vegetal de los montes, potreros, huertos y patios de los platoneros"_<br>
-> _Platón Sánchez, Ver. junio /81_
+>
+> <div style="text-align: right; font-style: italic;">"Retrato vegetal de los montes, potreros, huertos y patios de los platoneros"<br>Platón Sánchez, Ver. junio /81</div>
 
 Creo también que pensó mucho en el acto de plantar en los últimos días de su vida. Además de los árboles que me regaló, varias veces me preguntó por los que de pequeños mi hermano Juan Carlos y yo plantamos frente a la casa del Lago de las Ánimas. Le aseguré que ahí siguen creciendo.
 

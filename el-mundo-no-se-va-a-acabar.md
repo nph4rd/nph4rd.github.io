@@ -11,7 +11,7 @@ sitemap: false
 
 Hace menos de un mes en su festejo de cumpleaños 87 mi abuelo y yo tuvimos un momento fugaz de conexión. Fugaz, pienso yo, porque teníamos quizá más de un mes de no vernos, por varias razones -- entre ellas el nacimiento de su nuevo bisnieto, mi hijo, Fabio -- y también fugaz, al menos comparado con las tendidas pláticas que normalmente teníamos, con las pausas que una buena conversación amerita, y con el interés que pocas personas dan tan dedicadamente como él lo hacía. Unos días antes le dije por teléfono:
 
-_"Abuelo, perdón por no visitarlos últimamente. Hemos estado ocupados dándole la bienvenida a Fabio."_
+> _"Abuelo, perdón por no visitarlos últimamente. Hemos estado ocupados dándole la bienvenida a Fabio."_
 
 Me respondió:
 

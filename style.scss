@@ -316,6 +316,10 @@ nav {
     font-style: italic;
   }
 
+  &.entry-personal blockquote {
+    font-size: inherit;
+  }
+
   .comments {
     margin-top: 10px;
   }

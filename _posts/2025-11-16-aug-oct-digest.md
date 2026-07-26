@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AUG-SEP-OCT 25
+title: AUG-OCT 25
 author: np
 tags: [DIGEST]
 categories: [digest]
@@ -8,11 +8,11 @@ usemathjax: true
 ---
 
 ```
-    a❈u ╱  ╲ s❈e
-       ╱p██o╲
-      ╱█c███t╲ 
-     ╱t██20█2g\
-    ╱───25────5╲
+    a❈u ╱  ╲ o❈c
+       ╱g██t╲
+      ╱█2███0╲ 
+     ╱█2██20█5╲
+    ╱───25─────╲
    ∿∿∿∿∿∿∿∿∿∿∿∿∿∿
       ◈ ✺ ❋ ◈
 ```

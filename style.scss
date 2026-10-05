@@ -595,3 +595,89 @@ sup[id^="fnref"] {
     display: block;
   }
 }
+
+// Agent excerpts in Eleusinian Swarms.
+.post .entry .trace-message {
+  --trace-accent: #27624f;
+  --trace-fill: #e6efeb;
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  margin: 24px 0;
+
+  &.trace-agent-2 {
+    --trace-accent: #365d9d;
+    --trace-fill: #e7edf7;
+    grid-template-columns: minmax(0, 1fr) 76px;
+    .trace-speaker { grid-column: 2; grid-row: 1; }
+    .trace-bubble { grid-column: 1; grid-row: 1; border-radius: 14px 3px 14px 14px; }
+    .trace-bubble::before { left: auto; right: -9px; border-width: 9px 0 0 10px; border-color: transparent transparent transparent var(--trace-fill); }
+  }
+
+  &.trace-agent-3 {
+    --trace-accent: #71499c;
+    --trace-fill: #eee8f4;
+  }
+
+  .trace-speaker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding-top: 3px;
+    color: var(--trace-accent);
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .trace-avatar {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 4px;
+    border: 1px solid var(--trace-accent);
+    border-radius: 12px;
+    font-weight: bold;
+    background: var(--trace-fill);
+  }
+
+  .trace-name { font-weight: bold; white-space: nowrap; }
+  .trace-time { color: $subtext0; font-variant-numeric: tabular-nums; }
+
+  .trace-bubble {
+    position: relative;
+    margin: 0;
+    padding: 16px 18px;
+    border: 0;
+    border-radius: 3px 14px 14px 14px;
+    background: var(--trace-fill);
+    color: $text;
+    font-style: normal;
+    line-height: 1.65;
+    min-width: 0;
+    overflow-wrap: anywhere;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: -9px;
+      border-style: solid;
+      border-width: 9px 10px 0 0;
+      border-color: transparent var(--trace-fill) transparent transparent;
+    }
+
+    p { margin: 0; text-align: left; }
+    strong { color: var(--trace-accent); font-weight: bold; }
+  }
+
+  @media screen and (max-width: 480px) {
+    grid-template-columns: 54px minmax(0, 1fr);
+    gap: 10px;
+    &.trace-agent-2 { grid-template-columns: minmax(0, 1fr) 54px; }
+    .trace-speaker { font-size: 10px; }
+    .trace-bubble { padding: 12px; }
+  }
+}

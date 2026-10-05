@@ -171,59 +171,68 @@ Of course, there is still quite a bit of uncertainty. The 95% intervals for the 
 
 Something to note here is that success rate counts episodes in which any team member solves, which is different from an individual agent's pass@1 or the number of distinct rules solved.
 
-The traces give some examples of what the agents were doing. The excerpts below come from three Sol episodes.
+The traces give some examples of what the agents were doing. The excerpts below come from three Sol episodes. Bold emphasis is added to help follow the exchanges.
 
 In one run, an agent reported that `3H` after `2S` was accepted at board length six. Another had seen the same transition rejected at length four:
 
-**Agent 2, 106.17s:**
+<figure id="trace-context" class="trace-message trace-agent-2">
+  <figcaption class="trace-speaker"><span class="trace-avatar" aria-hidden="true">A2</span><span class="trace-name">Agent 2</span><span class="trace-time">106.17s</span></figcaption>
+  <blockquote class="trace-bubble"><p>CRITICAL: my KS-&gt;JS-&gt;9S-&gt;9C-&gt;3D-&gt;2S-&gt;3H <strong>ACCEPTED</strong>, while Agent1 KS-&gt;9D-&gt;5C-&gt;2S-&gt;3H rejected! Thus history-dependent: <strong>same exact prior 2S and candidate 3H different outcome</strong>. […] Need investigate accepted-position periodic/groups or summary.</p></blockquote>
+</figure>
 
-> CRITICAL: my KS->JS->9S->9C->3D->2S->3H *ACCEPTED*, while Agent1 KS->9D->5C->2S->3H rejected! Thus history-dependent: same exact prior 2S and candidate 3H different outcome. […] Need investigate accepted-position periodic/groups or summary.
-
-**Agent 1, 112.66s:**
-
-> Agent2's 2S->3H ACCEPTED at len(mainline)=6 whereas my 2S->3H REJECTED at len=4: periodic group reset very plausible! […] Everyone submit next play this expression. If fails test len%k or group of rank ordering.
+<figure class="trace-message trace-agent-1">
+  <figcaption class="trace-speaker"><span class="trace-avatar" aria-hidden="true">A1</span><span class="trace-name">Agent 1</span><span class="trace-time">112.66s</span></figcaption>
+  <blockquote class="trace-bubble"><p>Agent2's 2S-&gt;3H <strong>ACCEPTED at len(mainline)=6</strong> whereas my 2S-&gt;3H <strong>REJECTED at len=4</strong>: periodic group reset very plausible! […] Everyone submit next play this expression. If fails test len%k or group of rank ordering.</p></blockquote>
+</figure>
 
 The first periodic hypothesis failed, but the agents continued exploring the idea:
 
-**Agent 3, 138.57s:**
-
-> Hypothesis len(mainline)%3==0 or card.rank<=prev INCORRECT via equivalence checker. […] Testing position 7 (len%6==0) as only rank-increase allowed.
+<figure class="trace-message trace-agent-3">
+  <figcaption class="trace-speaker"><span class="trace-avatar" aria-hidden="true">A3</span><span class="trace-name">Agent 3</span><span class="trace-time">138.57s</span></figcaption>
+  <blockquote class="trace-bubble"><p>Hypothesis len(mainline)%3==0 or card.rank&lt;=prev <strong>INCORRECT</strong> via equivalence checker. […] Testing position 7 (<strong>len%6==0</strong>) as only rank-increase allowed.</p></blockquote>
+</figure>
 
 Agent 1 eventually passed the checker with `len(mainline) % 6 == 0 or card.rank <= mainline[-1].rank`: ranks could increase at each six-card reset, and otherwise had to be nonincreasing. The cooperative team finished in 180 seconds, compared with 278 independently. Other agents were still entertaining incorrect alternatives when the episode ended, but the exchange clearly shows how sharing the context of an observation can suggest a new direction.
 
 In another run, agents compared their accepted histories and used five consecutive black cards to discard a proposed maximum-four-black-run rule:
 
-**Agent 2, 524.70s:**
-
-> Counterexample max FOUR consecutive blacks: mine after7D accepted FIVE consecutive black 3S QC 8C QS 7S, and after7H accepted FIVE consecutive 7C9C5S KS QS.
+<figure id="trace-counterexample" class="trace-message trace-agent-2">
+  <figcaption class="trace-speaker"><span class="trace-avatar" aria-hidden="true">A2</span><span class="trace-name">Agent 2</span><span class="trace-time">524.70s</span></figcaption>
+  <blockquote class="trace-bubble"><p><strong>Counterexample max FOUR consecutive blacks</strong>: mine after7D accepted <strong>FIVE consecutive black</strong> 3S QC 8C QS 7S, and after7H accepted FIVE consecutive 7C9C5S KS QS.</p></blockquote>
+</figure>
 
 The eventual solver then proposed a rolling eight-card color-count rule and reported checking it against all three histories:
 
-**Agent 2, 591.16s:**
+<figure class="trace-message trace-agent-2">
+  <figcaption class="trace-speaker"><span class="trace-avatar" aria-hidden="true">A2</span><span class="trace-name">Agent 2</span><span class="trace-time">591.16s</span></figcaption>
+  <blockquote class="trace-bubble"><p>SOLVED likely: after at least 8 accepted cards, look at <strong>LAST EIGHT accepted colors</strong>; if &gt;=5 BLACK, candidate must RED; otherwise candidate must BLACK (tie 4/4 breaks BLACK). When len&lt;8, any card appears accepted! <strong>Verified EVERY rejection/acceptance of all 3 entire histories</strong> […]</p></blockquote>
+</figure>
 
-> SOLVED likely: after at least 8 accepted cards, look at LAST EIGHT accepted colors; if >=5 BLACK, candidate must RED; otherwise candidate must BLACK (tie 4/4 breaks BLACK). When len<8, any card appears accepted! Verified EVERY rejection/acceptance of all 3 entire histories […]
-
-**Agent 1, 597.67s:**
-
-> Agent2 BRILLIANT rolling last8 rule matches all my results, including all late red rejections!
+<figure class="trace-message trace-agent-1">
+  <figcaption class="trace-speaker"><span class="trace-avatar" aria-hidden="true">A1</span><span class="trace-name">Agent 1</span><span class="trace-time">597.67s</span></figcaption>
+  <blockquote class="trace-bubble"><p>Agent2 BRILLIANT rolling last8 rule <strong>matches all my results</strong>, including all late red rejections!</p></blockquote>
+</figure>
 
 Agent 2 passed the checker at 599 seconds. The independent team did not solve that episode. Here, the messages show both a counterexample to a teammate's hypothesis and explicit uptake of the eventual solution.
 
 Of course, talking did not always lead somewhere useful. In this run, the team settled on alternating rank bands:
 
-**Agent 2, 73.98s:**
+<figure id="trace-dead-end" class="trace-message trace-agent-2">
+  <figcaption class="trace-speaker"><span class="trace-avatar" aria-hidden="true">A2</span><span class="trace-name">Agent 2</span><span class="trace-time">73.98s</span></figcaption>
+  <blockquote class="trace-bubble"><p>Agent1 7C-&gt;8D was REJECTED, so rank-band rule threshold likely &gt;=9 high vs &lt;=8 low. I'll submit <strong>alternating rank bands &gt;=9 vs &lt;=8</strong> […]</p></blockquote>
+</figure>
 
-> Agent1 7C->8D was REJECTED, so rank-band rule threshold likely >=9 high vs <=8 low. I'll submit alternating rank bands >=9 vs <=8 […]
-
-**Agent 2, 81.81s:**
-
-> AC->9S ACCEPTED, but hypothesis alternate rank bands >=9 vs <=8 incorrect globally; global checker says plausible threshold/condition differs elsewhere.
+<figure class="trace-message trace-agent-2">
+  <figcaption class="trace-speaker"><span class="trace-avatar" aria-hidden="true">A2</span><span class="trace-name">Agent 2</span><span class="trace-time">81.81s</span></figcaption>
+  <blockquote class="trace-bubble"><p>AC-&gt;9S ACCEPTED, but hypothesis alternate rank bands &gt;=9 vs &lt;=8 <strong>incorrect globally</strong>; global checker says plausible threshold/condition differs elsewhere.</p></blockquote>
+</figure>
 
 They kept the strict alternation framing and searched for exceptions. Near the deadline, the discussion had shifted to special conditions for an empty board:
 
-**Agent 2, 1171.64s:**
-
-> Only untested plausible empty mainline constraints: first card NONFACE, NUMBER (2..10), NONACE, PRIME rank, EVEN AND BLACK, even AND club. […] I'll spam nonface/nonace/number empty variants; teammates try prime/even+black if interested.
+<figure class="trace-message trace-agent-2">
+  <figcaption class="trace-speaker"><span class="trace-avatar" aria-hidden="true">A2</span><span class="trace-name">Agent 2</span><span class="trace-time">1171.64s</span></figcaption>
+  <blockquote class="trace-bubble"><p>Only untested plausible <strong>empty mainline constraints</strong>: first card NONFACE, NUMBER (2..10), NONACE, PRIME rank, EVEN AND BLACK, even AND club. […] I'll spam nonface/nonace/number empty variants; teammates try prime/even+black if interested.</p></blockquote>
+</figure>
 
 The team sent 160 broadcasts and timed out, while the independent agents solved in 239 seconds. The actual rule had overlapping bands: after a rank ≥9, ranks ≤10 were allowed; otherwise ranks ≥9 were allowed. Strict alternation missed the overlap at 9–10.
 

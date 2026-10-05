@@ -16,9 +16,7 @@ usemathjax: false
      >  >   >   >  >
   >   >   >   >   >   >
      >   >  >   >  >
-          >   >      
-                
-
+          >   >
 ```
 
 Some months ago, I worked on [multi-agent systems](https://nphard.io/2026/02/23/hanabi.html) as part of the RL Residency at Prime Intellect. A lot has happened since then:

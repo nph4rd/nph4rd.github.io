@@ -92,14 +92,14 @@ Lastly, another source of information has been, as per usual, to just read specu
   <img src="https://raw.githubusercontent.com/nph4rd/nph4rd.github.io/master/images/eleusinian-swarms/teor_tweet.png" alt="Teortaxes and Florian Brand speculate about multi-agent training and the roles of different models" width="400">
 </div>
 
-And fun experiments, like pomterree's comparison of communicating and independent Minecraft builders:
+And fun experiments, like [pomterree](https://x.com/pomterree)'s comparison of communicating and independent Minecraft builders:
 
 <div style="text-align: center;">
   <img src="https://raw.githubusercontent.com/nph4rd/nph4rd.github.io/master/images/eleusinian-swarms/pomterre.png" alt="Pomterre reports a Minecraft building experiment comparing a communicating team with independent agents" width="400">
 </div>
 
 
-There are also some more thought-provoking writings, such as Florian's [Looking into the Swarm's Eye](https://florianbrand.com/posts/swarms), which argues that wall-clock time is becoming a practical limit for single agents, and that swarms offer another way to spend inference compute by letting several agents explore and share what they find, which is in agreement with what's been referenced here already.
+There are also some more thought-provoking writings, such as [Florian](https://x.com/xeophon)'s [Looking into the Swarm's Eye](https://florianbrand.com/posts/swarms), which argues that wall-clock time is becoming a practical limit for single agents, and that swarms offer another way to spend inference compute by letting several agents explore and share what they find, which is in agreement with what's been referenced here already.
 
 And lastly, something to definitely pay attention to are Noam Brown's interviews [with The Information](https://www.youtube.com/watch?v=fqcy0xQATq0&t=1550s) and  [with Dwarkesh](https://www.dwarkesh.com/p/noam-brown). Noam throughout makes special emphasis on latency gains, which, again, is in-tune with the previous mentions. He says that the benefit depends on the task, that coordination introduces overhead, and he describes a deliberately simple interface in which agents send messages that enter one another's context, rather than pushing inductive biases on how to organize.
 
@@ -294,7 +294,7 @@ I guess more than a conclusion here I end up with a useful environment to confir
 
 - To a certain extent I did not answer the question I started with: it is not clear to me yet where the border lies between environments where this phenomenon is present and where it's not. Meaning: this is now more evident for parallelizable tasks, but I wonder if the benefits of communcation/cooperation can reach other classes of envs in ways that have not been hereafter been measured.
 - Eleusis is a very simple environment and, thus, it isolates a lot of the more complex machinery of other more real-world-relevant tasks but it precisely drops - because of that - a lot of the coordination surface that a coding or math env could have with a proper harness. I think attempting to aim to replicate something like this on those environments could give us a lot of information.
-- A simplified communication channel minimizes the inductive bias over the cooperation structures that might arise, but perhaps purposeful design of different multi-agent protocols could unlock other features worth studying beyond latency gains, like model-behaviour traits. Hallerite's [On the Nature of the Swarm](https://hallerite.com/posts/on-the-nature-of-the-swarm) discusses this from the perspective of context: persistent agents can retain different parts of what the system has learned and make them available to one another. Shared tools, specialization, and structures that agents can themselves change are interesting directions to explore in richer environments.
+- A simplified communication channel minimizes the inductive bias over the cooperation structures that might arise, but perhaps purposeful design of different multi-agent protocols could unlock other features worth studying beyond latency gains, like model-behaviour traits. [@hallerite](https://x.com/hallerite)'s [On the Nature of the Swarm](https://hallerite.com/posts/on-the-nature-of-the-swarm) discusses this from the perspective of context: persistent agents can retain different parts of what the system has learned and make them available to one another. Shared tools, specialization, and structures that agents can themselves change are interesting directions to explore in richer environments.
 
 ---
 

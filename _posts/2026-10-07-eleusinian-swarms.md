@@ -165,7 +165,7 @@ Each seat had a limit of 100 valid plays. Teams shared a 20-minute gameplay dead
 
 The first result is that cooperation improved on the independent baseline for all three models[^5]. DeepSeek went from 23/90 solves alone to 35/90 independently and 44/90 cooperatively; Luna went from 24 to 36 to 44, and Sol from 53 to 65 to 74. So running three independent attempts already helped quite a bit, and letting the agents communicate added another 8–9 solves per 90 episodes.
 
-![Success rates and cooperative gains over independent teams](https://raw.githubusercontent.com/nph4rd/nph4rd.github.io/master/images/eleusinian-swarms/eleusis-coverage-and-lift-20260930.png)
+![Success rates and cooperative gains over independent teams]({{ site.baseurl }}/images/eleusinian-swarms/eleusis-coverage-and-lift-20260930.png)
 
 In percentage points, independent attempts add roughly 13 over solo, and cooperation adds another 9–10 over independence. This was the first encouraging find because it agreed with the previous work.
 

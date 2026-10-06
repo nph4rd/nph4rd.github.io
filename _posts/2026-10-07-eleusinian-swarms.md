@@ -149,6 +149,8 @@ This is useful now because by sharing this, the second agent is basically tellin
 
 The communication mechanism is deliberately boring: send_message(message) broadcasts text to all teammates, and queued messages enter each recipient’s context before its next model call. No shared board, assigned roles or required discussion rounds. Agents can compare hypotheses, share counterexamples, or divide up experiments, etc. The team succeeds as soon as any member submits a hypothesis that passes the checker, at which point the other agents are stopped.
 
+You can find the environment on the [Prime Intellect Hub](https://app.primeintellect.ai/dashboard/environments/nph4rd/eleusis), and the code in the public [residency-environments repository](https://github.com/PrimeIntellect-ai/residency-environments/tree/main/environments/eleusis).
+
 ## Experiments
 
 The main experiment used 30 fresh rules and three trials per rule in each setting[^4]:
@@ -277,7 +279,11 @@ On the same 14 tasks solved at every size, sixteen agents took about half as lon
 
 ![Observed latency across team sizes](https://raw.githubusercontent.com/nph4rd/nph4rd.github.io/master/images/eleusinian-swarms/eleusis-team-size-latency-scaling-20261001.png)
 
-Here the speed–cost tradeoff is quite evident. Sixteen agents cost about 48% more per episode than eight, with the same observed success rate. Two agents had the lowest estimated cost per solve on this panel, at $0.544, compared with $0.607 for solo and $1.195 for sixteen. Thus, optimal team-size depends on how much one values finishing sooner rather than later.
+Comparing cost and latency on those same 14 tasks makes the tradeoff easier to see. Two agents were slightly cheaper than solo on average ($0.18 vs $0.21), while finishing sooner. Larger teams continued to reduce latency, but at increasing cost.
+
+![Estimated cost versus time to solution on the same 14 tasks solved at every team size]({{ site.baseurl }}/images/eleusinian-swarms/eleusis-team-size-cost-latency-20261001.png)
+
+Across all 20 tasks, including unsuccessful episodes, sixteen agents cost about 48% more per episode than eight, with the same observed success rate. Two agents had the lowest estimated cost per solve on this panel, at $0.544, compared with $0.607 for solo and $1.195 for sixteen. Thus, optimal team-size depends on how much one values finishing sooner rather than later.
 
 ![Estimated inference cost across team sizes](https://raw.githubusercontent.com/nph4rd/nph4rd.github.io/master/images/eleusinian-swarms/eleusis-team-size-cost-scaling-20261001.png)
 

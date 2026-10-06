@@ -167,7 +167,7 @@ The first result is that cooperation improved on the independent baseline for al
 
 ![Success rates and cooperative gains over independent teams]({{ site.baseurl }}/images/eleusinian-swarms/eleusis-coverage-and-lift-20260930.png)
 
-In percentage points, independent attempts add roughly 13 over solo, and cooperation adds another 9–10 over independence. This was the first encouraging find because it agreed with the previous work.
+In percentage points, independent attempts add roughly 13% over solo, and cooperation adds another 9–10 over independence. This was the first encouraging find because it agreed with the previous work.
 
 Of course, there is still quite a bit of uncertainty. The 95% intervals for the cooperative gain are −1.1 to +22.2 points for DeepSeek, 0.0 to +17.8 for Luna, and +3.3 to +17.8 for Sol. Sol solves more overall and has the clearest positive interval, but its gain from cooperation is about the same as the others'. Direct comparisons do not establish a larger solve-rate benefit for Sol. These are exploratory intervals, without adjustment for multiple comparisons.
 

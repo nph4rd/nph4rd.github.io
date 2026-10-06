@@ -151,7 +151,7 @@ The communication mechanism is deliberately boring: send_message(message) broadc
 
 ## Experiments
 
-The main experiment used 30 fresh rulesand three trials per rule in each setting[^4]:
+The main experiment used 30 fresh rules and three trials per rule in each setting[^4]:
 
 - **Solo:** one solver.
 - **Independent:** three solvers, no communication.

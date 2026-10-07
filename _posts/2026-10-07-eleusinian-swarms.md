@@ -8,6 +8,7 @@ tags:
 categories:
   - AI
 usemathjax: false
+publish_now: true
 ---
 
 ```

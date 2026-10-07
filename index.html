@@ -4,12 +4,14 @@ layout: default
 
 <div class="posts">
   {% for post in paginator.posts %}
-    {% unless post.categories contains 'digest' or post.date > site.time %}
+    {% unless post.categories contains 'digest' %}
+    {% if post.publish_now or post.date <= site.time %}
       <article class="post">
 
         <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 
       </article>
+    {% endif %}
     {% endunless %}
   {% endfor %}
 </div>

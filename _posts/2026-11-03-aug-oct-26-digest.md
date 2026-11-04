@@ -15,7 +15,7 @@ usemathjax: true
 
 A few things I saved over the past three months:
 
-- [The human is the loop](https://brentfitzgerald.com/posts/the-human-is-the-loop/), Gwern’s [Guardian Angels](https://gwern.net/guardian-angel#chatbot-fixes), and [The Whispering Earring](https://gwern.net/doc/fiction/science-fiction/2012-10-03-yvain-thewhisperingearring.html). Read separately; all circle around agency.
+- [The human is the loop](https://brentfitzgerald.com/posts/the-human-is-the-loop/), Gwern’s [Guardian Angels](https://gwern.net/guardian-angel), and [The Whispering Earring](https://gwern.net/doc/fiction/science-fiction/2012-10-03-yvain-thewhisperingearring.html). Read separately; all circle around agency.
 
 - Oak Lab’s [Learning from experience instead of curated datasets](https://oaklab.ai/posts/learning-from-experience-instead-of-curated-datasets). On learning what to ignore in noisy experience.
 

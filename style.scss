@@ -681,3 +681,118 @@ sup[id^="fnref"] {
     .trace-bubble { padding: 12px; }
   }
 }
+
+// Newsletter subscribe box
+.newsletter-box {
+  margin-top: 2.5em;
+  padding: 18px 20px;
+  background-color: $mantle;
+  border: 1px solid $surface0;
+  border-radius: 6px;
+}
+
+.newsletter-heading {
+  margin: 0 0 12px;
+  font-weight: bold;
+  color: $text;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+
+  input[type="email"] {
+    flex: 1;
+    min-width: 0;
+    padding: 8px 12px;
+    font-family: 'Berkeley Mono', monospace;
+    font-size: 14px;
+    color: $text;
+    background-color: $base;
+    border: 1px solid $surface1;
+    border-radius: 4px;
+    outline: none;
+
+    &:focus {
+      border-color: $blue;
+    }
+  }
+
+  button[type="submit"] {
+    padding: 8px 16px;
+    font-family: 'Berkeley Mono', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    color: $base;
+    background-color: $blue;
+    border: 1px solid $blue;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+
+    &:hover:not(:disabled) {
+      background-color: $sapphire;
+      border-color: $sapphire;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+  }
+
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.newsletter-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.newsletter-note {
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: $subtext0;
+}
+
+.newsletter-status {
+  margin: 10px 0 0;
+  font-size: 13px;
+
+  &:empty {
+    display: none;
+  }
+
+  &.is-success {
+    color: $green;
+  }
+
+  &.is-error {
+    color: $red;
+  }
+}
+
+.newsletter-banner {
+  margin: 0 0 18px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: 1px solid $surface0;
+  background-color: $mantle;
+
+  &.is-success {
+    border-color: $green;
+    color: $green;
+  }
+
+  &.is-error {
+    border-color: $red;
+    color: $red;
+  }
+}

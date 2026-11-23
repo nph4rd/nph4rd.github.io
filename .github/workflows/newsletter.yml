@@ -1,0 +1,97 @@
+name: Send Newsletter Broadcast
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "_posts/**"
+  workflow_dispatch:
+    inputs:
+      post_path:
+        description: "Path to a post in _posts/ (e.g. _posts/2026-11-03-aug-oct-26-digest.md)"
+        required: true
+        type: string
+      dry_run:
+        description: "Preview output without calling Resend"
+        required: false
+        default: true
+        type: boolean
+      draft:
+        description: "Create a Resend draft broadcast instead of sending immediately"
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: newsletter-send
+  cancel-in-progress: false
+
+jobs:
+  broadcast:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Detect newly added posts
+        id: detect
+        if: github.event_name == 'push'
+        run: |
+          BEFORE="${{ github.event.before }}"
+          AFTER="${{ github.sha }}"
+          if [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            FILES=$(git diff-tree --no-commit-id --name-only --diff-filter=A -r "$AFTER" -- _posts/)
+          else
+            FILES=$(git diff --name-only --diff-filter=A "$BEFORE" "$AFTER" -- _posts/)
+          fi
+          echo "Detected new posts:"
+          echo "$FILES"
+          {
+            echo "files<<EOF"
+            echo "$FILES"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Send broadcast (automatic on new post)
+        if: github.event_name == 'push' && steps.detect.outputs.files != ''
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_SEGMENT_ID: ${{ secrets.RESEND_SEGMENT_ID }}
+          NEWSLETTER_FROM: ${{ vars.NEWSLETTER_FROM || 'np <newsletter@nphard.io>' }}
+          NEWSLETTER_REPLY_TO: ${{ vars.NEWSLETTER_REPLY_TO }}
+          SITE_URL: "https://nphard.io"
+        run: |
+          mapfile -t POST_FILES <<< "${{ steps.detect.outputs.files }}"
+          NON_EMPTY=()
+          for f in "${POST_FILES[@]}"; do
+            [ -n "$f" ] && NON_EMPTY+=("$f")
+          done
+          if [ "${#NON_EMPTY[@]}" -gt 0 ]; then
+            node newsletter/send.mjs "${NON_EMPTY[@]}"
+          fi
+
+      - name: Send broadcast (manual dispatch)
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_SEGMENT_ID: ${{ secrets.RESEND_SEGMENT_ID }}
+          NEWSLETTER_FROM: ${{ vars.NEWSLETTER_FROM || 'np <newsletter@nphard.io>' }}
+          NEWSLETTER_REPLY_TO: ${{ vars.NEWSLETTER_REPLY_TO }}
+          SITE_URL: "https://nphard.io"
+        run: |
+          FLAGS=("--force" "--skip-wait")
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            FLAGS+=("--dry-run")
+          fi
+          if [ "${{ inputs.draft }}" = "true" ]; then
+            FLAGS+=("--draft")
+          fi
+          node newsletter/send.mjs "${{ inputs.post_path }}" "${FLAGS[@]}"

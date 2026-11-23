@@ -1,0 +1,20 @@
+name = "nphard-newsletter"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+[vars]
+SITE_URL = "https://nphard.io"
+FROM_EMAIL = "np <newsletter@nphard.io>"
+ALLOWED_ORIGINS = "https://nphard.io,https://www.nphard.io"
+# Optional:
+# REPLY_TO = "you@nphard.io"
+
+# Optional custom domain (if nphard.io DNS is managed by Cloudflare):
+# routes = [
+#   { pattern = "newsletter.nphard.io", custom_domain = true }
+# ]
+
+# Required secrets (set via `npx wrangler secret put <NAME>`):
+# - RESEND_API_KEY
+# - RESEND_SEGMENT_ID
+# - SIGNING_SECRET     (random 32+ byte hex string, e.g. `openssl rand -hex 32`)

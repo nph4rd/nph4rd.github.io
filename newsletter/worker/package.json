@@ -1,0 +1,11 @@
+{
+  "name": "nphard-newsletter-worker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx wrangler dev",
+    "deploy": "npx wrangler deploy",
+    "test": "node --test test/worker.test.mjs"
+  }
+}

@@ -1,0 +1,96 @@
+{% assign newsletter_endpoint = site.newsletter.endpoint | default: "" %}
+<section class="newsletter-box" aria-label="Newsletter subscription">
+  <p class="newsletter-heading">Subscribe to new posts &amp; digests</p>
+  <form
+    class="newsletter-form"
+    method="post"
+    action="{% if newsletter_endpoint != '' %}{{ newsletter_endpoint }}/subscribe{% endif %}"
+    data-endpoint="{{ newsletter_endpoint }}"
+  >
+    <input
+      type="email"
+      name="email"
+      placeholder="you@example.com"
+      required
+      autocomplete="email"
+      aria-label="Email address"
+    />
+    <input
+      type="text"
+      name="website"
+      tabindex="-1"
+      autocomplete="off"
+      class="newsletter-hp"
+      aria-hidden="true"
+    />
+    <button type="submit">Subscribe</button>
+  </form>
+  <p class="newsletter-note">
+    Occasional blog posts &amp; digests. Unsubscribe anytime, or follow via
+    <a href="{{ site.baseurl }}/feed.xml">RSS</a>.
+  </p>
+  <p class="newsletter-status" role="status" aria-live="polite"></p>
+</section>
+
+<script>
+(function() {
+  const forms = document.querySelectorAll('.newsletter-form');
+  forms.forEach(function(form) {
+    if (form.dataset.bound) return;
+    form.dataset.bound = 'true';
+
+    const box = form.closest('.newsletter-box');
+    const status = box ? box.querySelector('.newsletter-status') : null;
+    const button = form.querySelector('button[type="submit"]');
+    const emailInput = form.querySelector('input[name="email"]');
+    const honeypotInput = form.querySelector('input[name="website"]');
+
+    function setStatus(message, kind) {
+      if (!status) return;
+      status.textContent = message;
+      status.className = 'newsletter-status' + (kind ? ' is-' + kind : '');
+    }
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const endpoint = (form.dataset.endpoint || '').replace(/\/+$/, '');
+      if (!endpoint) {
+        setStatus('Newsletter signup is not configured yet.', 'error');
+        return;
+      }
+
+      const email = (emailInput.value || '').trim();
+      const website = honeypotInput ? honeypotInput.value : '';
+      if (!email) {
+        setStatus('Please enter an email address.', 'error');
+        return;
+      }
+
+      button.disabled = true;
+      const originalLabel = button.textContent;
+      button.textContent = 'Sending...';
+      setStatus('', '');
+
+      try {
+        const res = await fetch(endpoint + '/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email, website: website })
+        });
+        const data = await res.json().catch(function() { return {}; });
+        if (res.ok && data.ok) {
+          setStatus(data.message || 'Check your inbox to confirm your subscription.', 'success');
+          emailInput.value = '';
+        } else {
+          setStatus(data.error || 'Could not subscribe right now. Please try again.', 'error');
+        }
+      } catch (err) {
+        setStatus('Network error. Please try again in a moment.', 'error');
+      } finally {
+        button.disabled = false;
+        button.textContent = originalLabel;
+      }
+    });
+  });
+})();
+</script>

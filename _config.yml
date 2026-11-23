@@ -39,7 +39,11 @@ google_analytics:
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url: https://nph4rd.github.io
+url: https://nphard.io
+
+# Newsletter signup endpoint (deployed Cloudflare Worker URL, without trailing slash)
+newsletter:
+  endpoint: "https://nphard-newsletter.arturomf94.workers.dev"
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
@@ -94,3 +98,4 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  - newsletter

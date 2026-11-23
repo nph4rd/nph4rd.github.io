@@ -1,17 +1,18 @@
 ---
 layout: page
-title: SUBSCRIBE
+title: SUBSCRIPTION
 permalink: /subscribe/
 ---
 
-<div id="subscribe-banner" class="newsletter-banner" hidden></div>
+<p id="subscribe-banner" class="newsletter-banner" hidden></p>
 
-<p>
-  Drop your email below to get notified whenever I publish a new blog post or digest.
-  You'll receive a quick confirmation email first (double opt-in), and every email has a one-click unsubscribe link.
+<p id="subscribe-back" hidden>
+  <a href="{{ site.baseurl }}/">&larr; Back to blog</a>
 </p>
 
-{% include newsletter-form.html %}
+<div id="subscribe-fallback">
+  {% include newsletter-form.html %}
+</div>
 
 <script>
 (function() {
@@ -21,33 +22,42 @@ permalink: /subscribe/
 
   const messages = {
     confirmed: {
-      text: "You're subscribed! You'll receive future blog posts and digests by email.",
-      kind: 'success'
+      text: "You're subscribed. Future posts and digests will go to your inbox.",
+      kind: 'success',
+      hideForm: true
     },
     'check-inbox': {
       text: 'Check your inbox and click the confirmation link to finish subscribing.',
-      kind: 'success'
+      kind: 'success',
+      hideForm: true
     },
     invalid: {
-      text: 'That confirmation link is invalid or has expired. Enter your email below to get a fresh one.',
-      kind: 'error'
+      text: 'That confirmation link is invalid or has expired. Enter your email below for a new one.',
+      kind: 'error',
+      hideForm: false
     },
     'invalid-email': {
       text: 'Please enter a valid email address.',
-      kind: 'error'
+      kind: 'error',
+      hideForm: false
     },
     error: {
       text: 'Something went wrong while processing your subscription. Please try again.',
-      kind: 'error'
+      kind: 'error',
+      hideForm: false
     }
   };
 
   const entry = messages[status];
   const banner = document.getElementById('subscribe-banner');
+  const back = document.getElementById('subscribe-back');
+  const fallback = document.getElementById('subscribe-fallback');
   if (entry && banner) {
     banner.textContent = entry.text;
     banner.className = 'newsletter-banner is-' + entry.kind;
     banner.hidden = false;
+    if (entry.hideForm && fallback) fallback.hidden = true;
+    if (back) back.hidden = false;
   }
 })();
 </script>

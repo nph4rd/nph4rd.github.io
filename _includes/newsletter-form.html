@@ -1,6 +1,8 @@
 {% assign newsletter_endpoint = site.newsletter.endpoint | default: "" %}
-<section class="newsletter-box" aria-label="Newsletter subscription">
-  <p class="newsletter-heading">Subscribe to new posts &amp; digests</p>
+<aside class="newsletter-box" aria-label="Newsletter subscription">
+  <p class="newsletter-note">
+    Updates by email (posts &amp; digests) &mdash; or via <a href="{{ site.baseurl }}/feed.xml">RSS</a>.
+  </p>
   <form
     class="newsletter-form"
     method="post"
@@ -23,14 +25,10 @@
       class="newsletter-hp"
       aria-hidden="true"
     />
-    <button type="submit">Subscribe</button>
+    <button type="submit">subscribe</button>
   </form>
-  <p class="newsletter-note">
-    Occasional blog posts &amp; digests. Unsubscribe anytime, or follow via
-    <a href="{{ site.baseurl }}/feed.xml">RSS</a>.
-  </p>
   <p class="newsletter-status" role="status" aria-live="polite"></p>
-</section>
+</aside>
 
 <script>
 (function() {
@@ -68,7 +66,7 @@
 
       button.disabled = true;
       const originalLabel = button.textContent;
-      button.textContent = 'Sending...';
+      button.textContent = 'sending...';
       setStatus('', '');
 
       try {

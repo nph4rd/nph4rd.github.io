@@ -682,58 +682,70 @@ sup[id^="fnref"] {
   }
 }
 
-// Newsletter subscribe box
+// Discreet newsletter subscribe footer
 .newsletter-box {
   margin-top: 2.5em;
-  padding: 18px 20px;
-  background-color: $mantle;
-  border: 1px solid $surface0;
-  border-radius: 6px;
+  padding-top: 1.25em;
+  border-top: 1px solid $surface0;
 }
 
-.newsletter-heading {
-  margin: 0 0 12px;
-  font-weight: bold;
-  color: $text;
+.newsletter-note {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: $subtext0;
+
+  a {
+    color: $subtext0;
+    text-decoration: underline;
+
+    &:hover {
+      color: $text;
+    }
+  }
 }
 
 .newsletter-form {
   display: flex;
-  gap: 8px;
-  align-items: stretch;
+  gap: 6px;
+  align-items: center;
+  max-width: 340px;
 
   input[type="email"] {
     flex: 1;
     min-width: 0;
-    padding: 8px 12px;
+    padding: 4px 8px;
     font-family: 'Berkeley Mono', monospace;
-    font-size: 14px;
+    font-size: 12px;
     color: $text;
-    background-color: $base;
+    background-color: transparent;
     border: 1px solid $surface1;
-    border-radius: 4px;
+    border-radius: 3px;
     outline: none;
 
+    &::placeholder {
+      color: $overlay0;
+    }
+
     &:focus {
-      border-color: $blue;
+      border-color: $overlay2;
     }
   }
 
   button[type="submit"] {
-    padding: 8px 16px;
+    padding: 4px 10px;
     font-family: 'Berkeley Mono', monospace;
-    font-size: 14px;
-    font-weight: bold;
-    color: $base;
-    background-color: $blue;
-    border: 1px solid $blue;
-    border-radius: 4px;
+    font-size: 12px;
+    color: $subtext1;
+    background-color: transparent;
+    border: 1px solid $surface1;
+    border-radius: 3px;
     cursor: pointer;
     white-space: nowrap;
 
     &:hover:not(:disabled) {
-      background-color: $sapphire;
-      border-color: $sapphire;
+      color: $text;
+      border-color: $overlay2;
+      background-color: $mantle;
     }
 
     &:disabled {
@@ -743,7 +755,7 @@ sup[id^="fnref"] {
   }
 
   @include mobile {
-    flex-direction: column;
+    max-width: 100%;
   }
 }
 
@@ -756,15 +768,9 @@ sup[id^="fnref"] {
   pointer-events: none;
 }
 
-.newsletter-note {
-  margin: 10px 0 0;
-  font-size: 12px;
-  color: $subtext0;
-}
-
 .newsletter-status {
-  margin: 10px 0 0;
-  font-size: 13px;
+  margin: 8px 0 0;
+  font-size: 12px;
 
   &:empty {
     display: none;
@@ -780,19 +786,14 @@ sup[id^="fnref"] {
 }
 
 .newsletter-banner {
-  margin: 0 0 18px;
-  padding: 12px 16px;
-  border-radius: 6px;
-  border: 1px solid $surface0;
-  background-color: $mantle;
+  margin: 0 0 16px;
+  font-size: 13px;
 
   &.is-success {
-    border-color: $green;
     color: $green;
   }
 
   &.is-error {
-    border-color: $red;
     color: $red;
   }
 }
